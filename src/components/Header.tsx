@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu as MenuIcon, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -14,6 +14,15 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -36,7 +45,13 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-[#FFC700] text-[#111111] py-5 px-6 md:px-12 select-none">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 select-none ${
+        scrolled
+          ? "bg-[#FFC700]/85 backdrop-blur-md shadow-sm py-3 px-6 md:px-12 border-b border-black/5"
+          : "bg-transparent py-5 px-6 md:px-12"
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* LEFT: MEDEO LOGO + SUBTITLE */}
@@ -90,7 +105,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#FFC700] pt-4 pb-6 border-b border-[#111111]/20 overflow-hidden"
+            className="lg:hidden bg-[#FFC700]/95 backdrop-blur-md pt-4 pb-6 border-b border-[#111111]/20 overflow-hidden shadow-lg rounded-b-2xl mt-3"
           >
             <div className="flex flex-col space-y-4 px-4">
               {NAV_LINKS.map((link) => (

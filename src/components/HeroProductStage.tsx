@@ -36,14 +36,24 @@ export const HERO_DRINKS = [
     alt: "MEDEO Classic Latte Art",
     badge: "100% АРАБИКА",
     tilt: -18,
-    scaleMultiplier: 0.80,
+    scaleMultiplier: 0.82,
   },
 ];
 
 export default function HeroProductStage() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Automatic clockwise transition every 4.2 seconds
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Automatic transition every 4.2 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_DRINKS.length);
@@ -52,28 +62,44 @@ export default function HeroProductStage() {
   }, []);
 
   const currentDrink = HERO_DRINKS[currentIndex];
+  const activeTilt = isMobile ? 0 : currentDrink.tilt;
+  const baseScale = isMobile ? 1.18 * currentDrink.scaleMultiplier : 1.0 * currentDrink.scaleMultiplier;
 
   return (
-    <div className="relative w-full max-w-2xl h-[380px] sm:h-[480px] md:h-[560px] lg:h-[620px] flex items-center justify-center select-none">
+    <div className="relative w-full max-w-2xl h-[300px] sm:h-[370px] md:h-[450px] lg:h-[580px] flex items-center justify-center select-none overflow-visible">
       
-      {/* SINGLE CUP CLOCKWISE SLIDING STAGE (MODERATE TILT TO THE LEFT) */}
-      <div className="relative w-full h-full flex items-center justify-center">
+      {/* MOBILE ONLY: MEDEO INSTA GRAPHIC BACKGROUND ELEMENT BEHIND THE CUP */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 lg:hidden overflow-visible">
+        <div className="relative w-[360px] sm:w-[440px] md:w-[520px] aspect-[914/823] opacity-95">
+          <Image
+            src="/images/hero/medeo insta 2.png"
+            alt="MEDEO Brand Art Backdrop"
+            fill
+            sizes="(max-width: 640px) 360px, 440px"
+            priority
+            className="object-contain"
+          />
+        </div>
+      </div>
+
+      {/* SINGLE CUP STAGE (VERTICAL ON MOBILE, TILTED ON DESKTOP) */}
+      <div className="relative z-10 w-full h-full flex items-center justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentDrink.id}
             initial={{
               opacity: 0,
-              rotate: 15, // Enters along arc from top right
-              x: 90,
-              y: -110,
-              scale: 0.88 * currentDrink.scaleMultiplier,
+              rotate: isMobile ? 0 : 15,
+              x: isMobile ? 70 : 80,
+              y: isMobile ? 0 : -90,
+              scale: baseScale * 0.9,
             }}
             animate={{
               opacity: 1,
-              rotate: currentDrink.tilt, // Gentle, moderate tilt to the left (-16° to -18°)
+              rotate: activeTilt, // Exactly 0 on mobile, tilted on desktop
               x: 0,
               y: 0,
-              scale: 1 * currentDrink.scaleMultiplier,
+              scale: baseScale,
               transition: {
                 duration: 0.95,
                 ease: [0.16, 1, 0.3, 1],
@@ -81,36 +107,36 @@ export default function HeroProductStage() {
             }}
             exit={{
               opacity: 0,
-              rotate: -55, // Exits down and left along clockwise arc
-              x: -100,
-              y: 130,
-              scale: 0.88 * currentDrink.scaleMultiplier,
+              rotate: isMobile ? 0 : -55,
+              x: isMobile ? -70 : -90,
+              y: isMobile ? 0 : 110,
+              scale: baseScale * 0.9,
               transition: {
                 duration: 0.75,
                 ease: [0.4, 0, 0.2, 1],
               },
             }}
-            className="relative w-[240px] sm:w-[340px] md:w-[420px] lg:w-[480px] h-[320px] sm:h-[440px] md:h-[520px] lg:h-[580px] flex items-center justify-center cursor-pointer"
+            className="relative w-[260px] sm:w-[320px] md:w-[380px] lg:w-[460px] h-[290px] sm:h-[360px] md:h-[440px] lg:h-[540px] flex items-center justify-center cursor-pointer"
             onClick={() => setCurrentIndex((prev) => (prev + 1) % HERO_DRINKS.length)}
           >
             {/* Subtle organic hovering float while resting */}
             <motion.div
               animate={{
-                y: [0, -12, 0],
-                rotate: [currentDrink.tilt, currentDrink.tilt + 1.5, currentDrink.tilt],
+                y: [0, -10, 0],
+                rotate: isMobile ? 0 : [activeTilt, activeTilt + 1.5, activeTilt],
               }}
               transition={{
                 duration: 5.0,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative w-full h-full drop-shadow-[0_35px_50px_rgba(0,0,0,0.38)]"
+              className="relative w-full h-full drop-shadow-[0_28px_45px_rgba(0,0,0,0.36)]"
             >
               <Image
                 src={currentDrink.src}
                 alt={currentDrink.alt}
                 fill
-                sizes="(max-width: 640px) 260px, (max-width: 1024px) 440px, 500px"
+                sizes="(max-width: 640px) 280px, (max-width: 1024px) 400px, 480px"
                 priority
                 className="object-contain"
               />
@@ -119,8 +145,8 @@ export default function HeroProductStage() {
         </AnimatePresence>
       </div>
 
-      {/* INTERACTIVE THUMBNAIL SELECTOR / DOTS IN BOTTOM-RIGHT */}
-      <div className="absolute bottom-2 right-4 sm:right-8 z-30 flex items-center gap-2 bg-[#111111]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-lg">
+      {/* DESKTOP ONLY: INTERACTIVE THUMBNAIL SELECTOR / DOTS (HIDDEN ON MOBILE) */}
+      <div className="hidden lg:flex absolute bottom-1 right-6 z-30 items-center gap-2 bg-[#111111]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-lg">
         {HERO_DRINKS.map((drink, idx) => {
           const isActive = idx === currentIndex;
           return (
