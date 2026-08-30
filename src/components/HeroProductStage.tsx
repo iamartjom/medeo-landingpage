@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 export interface CarouselItem {
   id: string;
   name: string;
-  category: "cup" | "dessert";
+  category: "cup" | "dessert" | "hotdog";
   badge: string;
   image: string;
   description: string;
@@ -21,35 +21,44 @@ const CAROUSEL_ITEMS: CarouselItem[] = [
     name: "Карамельный Латте MEDEO",
     category: "cup",
     badge: "СЕЗОННЫЙ СПЕШЕЛ",
-    image: "/images/hero/medeo-cup-whipped.png",
+    image: "/images/hero/hero-whipped-cup.png",
     description: "Авторский латте с пышной шапкой взбитых сливок, карамелью и пряной крошкой",
     weightOrVolume: "350 мл",
   },
   {
-    id: "pecan-slice",
-    name: "Торт Пекан-Карамель",
+    id: "caramel-tarts",
+    name: "Тарталетки с Карамелью",
     category: "dessert",
     badge: "ХИТ ДЕСЕРТ",
-    image: "/images/hero/medeo-dessert-slice.png",
-    description: "Нежный бисквитный торт с домашней соленой карамелью и отборным пеканом",
-    weightOrVolume: "190 г",
+    image: "/images/hero/hero-caramel-tarts.png",
+    description: "Песочные тарталетки с тягучей домашней карамелью и обжаренным орехом",
+    weightOrVolume: "180 г",
   },
   {
     id: "latte-art",
-    name: "Классический Латте MEDEO",
+    name: "Классический Капучино MEDEO",
     category: "cup",
     badge: "100% АРАБИКА",
-    image: "/images/hero/medeo-cup-latte.png",
-    description: "Шелковистый латте с авторским рисунком молочной пены и плотным эспрессо",
+    image: "/images/hero/hero-latte-cup.png",
+    description: "Плотный капучино с авторским рисунком молочной пены и богатым ароматом",
     weightOrVolume: "300 мл",
   },
   {
-    id: "pecan-cheesecake",
-    name: "Чизкейк Пекан-Шоколад",
+    id: "brownie-stack",
+    name: "Шоколадный Брауни-Спешел",
     category: "dessert",
     badge: "НОВИНКА",
-    image: "/images/hero/medeo-dessert-cheesecake.png",
-    description: "Сливочный чизкейк на темной какао-основе с шоколадными каплями и орехом",
+    image: "/images/hero/hero-brownie-stack.png",
+    description: "Трехслойный плотный шоколадный брауни с хрустящей карамельной корочкой",
+    weightOrVolume: "220 г",
+  },
+  {
+    id: "greek-hotdog",
+    name: "Хот-Дог Греческий",
+    category: "hotdog",
+    badge: "ХИТ STREET-FOOD",
+    image: "/images/hero/hero-greek-hotdog.png",
+    description: "Сочная сосиска гриль, сыр фета, свежие томаты, оливки и фирменный соус",
     weightOrVolume: "210 г",
   },
 ];
@@ -80,7 +89,6 @@ export default function HeroProductStage() {
 
   const activeItem = CAROUSEL_ITEMS[currentIndex];
 
-  // Calculate indices for 3D carousel arrangement
   const prevIndex = (currentIndex - 1 + CAROUSEL_ITEMS.length) % CAROUSEL_ITEMS.length;
   const nextIndex = (currentIndex + 1) % CAROUSEL_ITEMS.length;
 
@@ -102,7 +110,7 @@ export default function HeroProductStage() {
           animate={{ opacity: 0.45, x: 0, scale: 0.65, rotateY: -25, zIndex: 10 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="relative w-full aspect-square drop-shadow-xl filter grayscale-[30%]">
+          <div className="relative w-full aspect-square drop-shadow-xl filter grayscale-[25%]">
             <Image
               src={CAROUSEL_ITEMS[prevIndex].image}
               alt={CAROUSEL_ITEMS[prevIndex].name}
@@ -165,7 +173,7 @@ export default function HeroProductStage() {
           animate={{ opacity: 0.45, x: 0, scale: 0.65, rotateY: 25, zIndex: 10 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="relative w-full aspect-square drop-shadow-xl filter grayscale-[30%]">
+          <div className="relative w-full aspect-square drop-shadow-xl filter grayscale-[25%]">
             <Image
               src={CAROUSEL_ITEMS[nextIndex].image}
               alt={CAROUSEL_ITEMS[nextIndex].name}
