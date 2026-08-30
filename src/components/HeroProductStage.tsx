@@ -21,11 +21,11 @@ export const HERO_DRINKS = [
     title: "АЙС МОККО СПЕШЕЛТИ",
     subtitle: "Освежающий эспрессо со льдом, шоколадный ганаш и сливочная пенка",
     price: "260 ₽",
-    src: "/images/hero/hero-iced-specialty.png",
+    src: "/images/hero/ChatGPT Image 30. Aug. 2026, 21_48_52.png",
     alt: "MEDEO Iced Mocha Specialty",
     badge: "NEW COLD BREW",
     tilt: -16,
-    scaleMultiplier: 1.0,
+    scaleMultiplier: 0.98,
   },
   {
     id: "latte",
@@ -36,7 +36,7 @@ export const HERO_DRINKS = [
     alt: "MEDEO Classic Latte Art",
     badge: "100% АРАБИКА",
     tilt: -18,
-    scaleMultiplier: 1.0,
+    scaleMultiplier: 0.82,
   },
 ];
 
