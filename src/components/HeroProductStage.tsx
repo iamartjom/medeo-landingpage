@@ -21,11 +21,11 @@ export const HERO_DRINKS = [
     title: "АЙС МОККО СПЕШЕЛТИ",
     subtitle: "Освежающий эспрессо со льдом, шоколадный ганаш и сливочная пенка",
     price: "260 ₽",
-    src: "/images/hero/ChatGPT Image 30. Aug. 2026, 21_48_52.png",
+    src: "/images/hero/hero-iced-cup.png",
     alt: "MEDEO Iced Mocha Specialty",
     badge: "NEW COLD BREW",
     tilt: -16,
-    scaleMultiplier: 0.98,
+    scaleMultiplier: 1.0,
   },
   {
     id: "latte",
@@ -36,7 +36,7 @@ export const HERO_DRINKS = [
     alt: "MEDEO Classic Latte Art",
     badge: "100% АРАБИКА",
     tilt: -18,
-    scaleMultiplier: 0.82,
+    scaleMultiplier: 1.0,
   },
 ];
 
@@ -63,7 +63,7 @@ export default function HeroProductStage() {
 
   const currentDrink = HERO_DRINKS[currentIndex];
   const activeTilt = isMobile ? 0 : currentDrink.tilt;
-  const baseScale = isMobile ? 1.18 * currentDrink.scaleMultiplier : 1.0 * currentDrink.scaleMultiplier;
+  const baseScale = isMobile ? 1.18 : 1.0;
 
   return (
     <div className="relative w-full max-w-2xl h-[300px] sm:h-[370px] md:h-[450px] lg:h-[580px] flex items-center justify-center select-none overflow-visible">
@@ -72,7 +72,7 @@ export default function HeroProductStage() {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 lg:hidden overflow-visible">
         <div className="relative w-[360px] sm:w-[440px] md:w-[520px] aspect-[914/823] opacity-95">
           <Image
-            src="/images/hero/medeo insta 2.png"
+            src="/images/hero/medeo-insta-bg.png"
             alt="MEDEO Brand Art Backdrop"
             fill
             sizes="(max-width: 640px) 360px, 440px"
