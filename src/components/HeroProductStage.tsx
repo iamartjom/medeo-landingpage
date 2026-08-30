@@ -4,54 +4,48 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 
-export interface HeroSlide {
+export interface HeroTripleComposition {
   id: string;
-  mainImage: string;
-  secondaryImage?: string;
-  accentPosition?: "left-behind" | "right-behind" | "bottom-right";
+  leftImage: string;
+  centerImage: string;
+  rightImage: string;
 }
 
-const HERO_SLIDES: HeroSlide[] = [
+const HERO_COMPOSITIONS: HeroTripleComposition[] = [
   {
-    id: "cappuccino",
-    mainImage: "/images/hero/hero-latte-cup.png",
+    id: "comp-1",
+    leftImage: "/images/hero/medeo-dessert-cheesecake.png",
+    centerImage: "/images/hero/medeo-cup-latte.png",
+    rightImage: "/images/hero/hero-greek-hotdog.png",
   },
   {
-    id: "caramel-tarts",
-    mainImage: "/images/hero/hero-caramel-tarts.png",
-    secondaryImage: "/images/hero/hero-whipped-cup.png",
-    accentPosition: "right-behind",
+    id: "comp-2",
+    leftImage: "/images/hero/hero-caramel-tarts.png",
+    centerImage: "/images/hero/medeo-cup-whipped.png",
+    rightImage: "/images/hero/hero-brownie-stack.png",
   },
   {
-    id: "greek-hotdog",
-    mainImage: "/images/hero/hero-greek-hotdog.png",
-  },
-  {
-    id: "whipped-latte",
-    mainImage: "/images/hero/hero-whipped-cup.png",
-    secondaryImage: "/images/hero/hero-brownie-stack.png",
-    accentPosition: "left-behind",
-  },
-  {
-    id: "brownie-stack",
-    mainImage: "/images/hero/hero-brownie-stack.png",
+    id: "comp-3",
+    leftImage: "/images/hero/medeo-dessert-slice.png",
+    centerImage: "/images/hero/medeo-cup-latte.png",
+    rightImage: "/images/hero/hero-greek-hotdog.png",
   },
 ];
 
 export default function HeroProductStage() {
   const [index, setIndex] = useState(0);
 
-  // Mouse Parallax for subtle 3D depth
+  // Mouse Parallax for subtle depth
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
   const springConfig = { damping: 30, stiffness: 100 };
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [6, -6]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-8, 8]), springConfig);
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [5, -5]), springConfig);
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-7, 7]), springConfig);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+      setIndex((prev) => (prev + 1) % HERO_COMPOSITIONS.length);
     }, 4500);
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -70,83 +64,66 @@ export default function HeroProductStage() {
     };
   }, [mouseX, mouseY]);
 
-  const currentSlide = HERO_SLIDES[index];
+  const currentComp = HERO_COMPOSITIONS[index];
 
   return (
-    <div className="relative w-full h-[400px] sm:h-[480px] md:h-[560px] flex items-center justify-center perspective-1000 select-none overflow-visible">
-      {/* PERSPECTIVE STAGE */}
+    <div className="relative w-full max-w-6xl mx-auto h-[380px] sm:h-[460px] md:h-[540px] flex items-center justify-center perspective-1000 select-none overflow-visible px-4">
       <motion.div
         style={{
           rotateX,
           rotateY,
           transformStyle: "preserve-3d",
         }}
-        className="relative w-full max-w-5xl h-full flex items-center justify-center"
+        className="relative w-full h-full flex items-center justify-center"
       >
         <AnimatePresence mode="popLayout">
           <motion.div
-            key={currentSlide.id}
-            initial={{
-              opacity: 0,
-              scale: 0.82,
-              x: 80,
-              rotate: -6,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              x: 0,
-              rotate: 0,
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0.85,
-              x: -80,
-              rotate: 6,
-            }}
-            transition={{
-              duration: 1.0,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            className="relative flex items-center justify-center"
+            key={currentComp.id}
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: -20 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full h-full flex items-center justify-center"
           >
-            {/* SECONDARY DECORATIVE PRODUCT ACCENT (IF PRESENT) */}
-            {currentSlide.secondaryImage && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.6, y: 30 }}
-                animate={{ opacity: 0.55, scale: 0.72, y: 0 }}
-                exit={{ opacity: 0, scale: 0.5, y: -30 }}
-                transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className={`absolute z-10 w-[160px] sm:w-[220px] md:w-[280px] drop-shadow-xl filter grayscale-[20%] ${
-                  currentSlide.accentPosition === "right-behind"
-                    ? "right-[-25%] top-[-5%] rotate-[12deg]"
-                    : "left-[-25%] top-[10%] rotate-[-12deg]"
-                }`}
-              >
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative w-full aspect-square"
-                >
-                  <Image
-                    src={currentSlide.secondaryImage}
-                    alt="Medeo Accent"
-                    fill
-                    className="object-contain"
-                  />
-                </motion.div>
-              </motion.div>
-            )}
-
-            {/* MAIN DOMINANT PRODUCT */}
+            {/* LEFT PRODUCT (DESSERT) */}
             <motion.div
-              animate={{ y: [0, -12, 0], rotate: [0, 1.5, 0] }}
-              transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-20 w-[240px] sm:w-[320px] md:w-[420px] lg:w-[460px] aspect-square drop-shadow-[0_35px_60px_rgba(0,0,0,0.38)]"
+              animate={{ y: [0, -10, 0], rotate: [-4, -2, -4] }}
+              transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute left-[0%] sm:left-[5%] md:left-[8%] lg:left-[10%] z-20 w-[140px] sm:w-[210px] md:w-[280px] lg:w-[320px] aspect-square drop-shadow-[0_25px_35px_rgba(0,0,0,0.32)]"
             >
               <Image
-                src={currentSlide.mainImage}
-                alt="MEDEO Showcase Product"
+                src={currentComp.leftImage}
+                alt="MEDEO Dessert"
+                fill
+                priority
+                className="object-contain"
+              />
+            </motion.div>
+
+            {/* CENTER DOMINANT PRODUCT (MEDEO COFFEE CUP) */}
+            <motion.div
+              animate={{ y: [0, -14, 0] }}
+              transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-30 w-[190px] sm:w-[270px] md:w-[360px] lg:w-[410px] aspect-square drop-shadow-[0_35px_50px_rgba(0,0,0,0.4)]"
+            >
+              <Image
+                src={currentComp.centerImage}
+                alt="MEDEO Specialty Coffee"
+                fill
+                priority
+                className="object-contain"
+              />
+            </motion.div>
+
+            {/* RIGHT PRODUCT (HOT DOG) */}
+            <motion.div
+              animate={{ y: [0, -12, 0], rotate: [4, 6, 4] }}
+              transition={{ duration: 5.6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+              className="absolute right-[0%] sm:right-[5%] md:right-[8%] lg:right-[10%] z-20 w-[140px] sm:w-[210px] md:w-[280px] lg:w-[320px] aspect-square drop-shadow-[0_25px_35px_rgba(0,0,0,0.32)]"
+            >
+              <Image
+                src={currentComp.rightImage}
+                alt="MEDEO Hot Dog"
                 fill
                 priority
                 className="object-contain"

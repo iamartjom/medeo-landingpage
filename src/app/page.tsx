@@ -1,22 +1,22 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MenuSection from "@/components/MenuSection";
-import FeaturedCampaign from "@/components/FeaturedCampaign";
-import SeasonalMenu from "@/components/SeasonalMenu";
+import YandexDelivery from "@/components/YandexDelivery";
+import PopularSection from "@/components/PopularSection";
 import About from "@/components/About";
-import LocationCTA from "@/components/LocationCTA";
+import LocationSection from "@/components/LocationSection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#111111] text-[#FAF8F5] flex flex-col justify-between overflow-x-hidden selection:bg-[#FFC700] selection:text-[#111111]">
+    <main className="min-h-screen bg-[#FAF8F5] text-[#111111] flex flex-col justify-between overflow-x-hidden selection:bg-[#FFC700] selection:text-[#111111]">
       <Header />
       <Hero />
       <MenuSection />
-      <FeaturedCampaign />
-      <SeasonalMenu />
+      <YandexDelivery />
+      <PopularSection />
       <About />
-      <LocationCTA />
+      <LocationSection />
       <Footer />
     </main>
   );

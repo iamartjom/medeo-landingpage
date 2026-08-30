@@ -5,9 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu as MenuIcon, X, MapPin, Truck } from "lucide-react";
 
 const NAV_LINKS = [
-  { name: "Напитки", href: "#drinks" },
-  { name: "Хот-доги", href: "#hotdogs" },
-  { name: "Десерты", href: "#desserts" },
+  { name: "Напитки", href: "#menu" },
+  { name: "Хот-доги", href: "#menu" },
+  { name: "Десерты", href: "#menu" },
+  { name: "Сезонное меню", href: "#menu" },
   { name: "О нас", href: "#about" },
 ];
 
@@ -30,7 +31,7 @@ export default function Header() {
     const targetId = href.replace("#", "");
     const element = document.getElementById(targetId);
     if (element) {
-      const offset = 90;
+      const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -47,81 +48,57 @@ export default function Header() {
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#111111]/95 backdrop-blur-md py-3 border-b border-[#FFC700]/20 shadow-2xl text-[#FAF8F5]"
-          : "bg-transparent py-5 text-[#111111]"
+          ? "bg-[#FFC700]/95 backdrop-blur-md py-3 shadow-lg text-[#111111] border-b border-[#111111]/10"
+          : "bg-[#FFC700] py-4 text-[#111111]"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
         
         {/* LEFT LOGO + SUBTITLE */}
-        <a href="#" className="group flex flex-col justify-center select-none">
-          <div className="flex items-center gap-1.5 font-display text-2xl md:text-3xl font-black tracking-tighter leading-none">
-            <span className={scrolled ? "text-[#FFC700]" : "text-[#111111]"}>
-              MEDEO
-            </span>
-            <span
-              className={`w-2 h-2 rounded-full transition-transform group-hover:scale-150 ${
-                scrolled ? "bg-[#FAF8F5]" : "bg-[#111111]"
-              }`}
-            />
-          </div>
-          <span
-            className={`font-display text-[9px] md:text-[10px] font-extrabold tracking-[0.25em] uppercase transition-colors -mt-0.5 ${
-              scrolled ? "text-[#FAF8F5]/70" : "text-[#111111]/80"
-            }`}
-          >
+        <a href="#" className="flex flex-col justify-center select-none group">
+          <span className="font-display text-2xl md:text-3xl font-black tracking-tighter text-[#111111] leading-none">
+            MEDEO
+          </span>
+          <span className="font-display text-[8px] md:text-[9.5px] font-extrabold tracking-[0.22em] uppercase text-[#111111]/80 mt-0.5">
             КОФЕ С СОБОЙ
           </span>
         </a>
 
         {/* CENTER NAVIGATION */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-7">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
-              className={`font-sans text-sm font-semibold tracking-wide transition-colors relative py-1 hover:opacity-100 ${
-                scrolled
-                  ? "text-[#FAF8F5] opacity-80 hover:text-[#FFC700]"
-                  : "text-[#111111] opacity-90 hover:text-[#111111]"
-              }`}
+              className="font-sans text-xs md:text-sm font-bold text-[#111111] opacity-90 hover:opacity-100 transition-opacity relative py-1"
             >
               {link.name}
             </a>
           ))}
         </nav>
 
-        {/* RIGHT SIDE ACTIONS: 1. ДОСТАВКА ЯНДЕКС, 2. МЫ НА КАРТЕ */}
-        <div className="hidden lg:flex items-center space-x-4">
+        {/* RIGHT SIDE ACTIONS */}
+        <div className="hidden lg:flex items-center space-x-3">
           {/* ACTION 1: YANDEX DELIVERY */}
           <a
-            href="#location"
-            onClick={(e) => scrollToSection(e, "#location")}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full font-display text-xs font-bold tracking-wider transition-all duration-300 active:scale-95 ${
-              scrolled
-                ? "bg-[#FAF8F5]/10 text-[#FAF8F5] hover:bg-[#FAF8F5]/20 border border-[#FAF8F5]/20"
-                : "bg-[#111111]/10 text-[#111111] hover:bg-[#111111]/20 border border-[#111111]/20"
-            }`}
+            href="#delivery"
+            onClick={(e) => scrollToSection(e, "#delivery")}
+            className="flex items-center gap-2 px-4 py-2 rounded-full font-display text-[11px] font-extrabold tracking-wider border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-[#FFC700] transition-all duration-300 active:scale-95 uppercase"
           >
-            <Truck className="w-3.5 h-3.5" />
             <span>ДОСТАВКА ЯНДЕКС</span>
           </a>
 
-          {/* ACTION 2: PRIMARY CTA - МЫ НА КАРТЕ */}
+          {/* ACTION 2: PRIMARY BLACK BUTTON - МЫ НА КАРТЕ */}
           <a
             href="#location"
             onClick={(e) => scrollToSection(e, "#location")}
-            className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-display text-xs font-black tracking-wider transition-all duration-300 active:scale-95 shadow-md ${
-              scrolled
-                ? "bg-[#FFC700] text-[#111111] hover:bg-[#FAF8F5]"
-                : "bg-[#111111] text-[#FFC700] hover:bg-[#FAF8F5] hover:text-[#111111]"
-            }`}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full font-display text-[11px] font-black tracking-wider bg-[#111111] text-[#FFC700] hover:bg-[#FAF8F5] hover:text-[#111111] transition-all duration-300 active:scale-95 uppercase shadow-md"
           >
-            <MapPin className="w-3.5 h-3.5" />
+            <MapPin className="w-3.5 h-3.5 fill-[#FFC700]" />
             <span>МЫ НА КАРТЕ</span>
           </a>
         </div>
@@ -130,9 +107,7 @@ export default function Header() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle navigation"
-          className={`lg:hidden p-2 rounded-lg transition-colors ${
-            scrolled ? "text-[#FFC700]" : "text-[#111111]"
-          }`}
+          className="lg:hidden p-2 rounded-lg text-[#111111] transition-colors"
         >
           {mobileMenuOpen ? <X className="w-7 h-7" /> : <MenuIcon className="w-7 h-7" />}
         </button>
@@ -146,36 +121,36 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-[#111111] border-b border-[#FFC700]/30 text-[#FAF8F5] overflow-hidden"
+            className="lg:hidden bg-[#FFC700] border-b border-[#111111]/20 text-[#111111] overflow-hidden"
           >
-            <div className="px-6 py-8 flex flex-col space-y-6">
+            <div className="px-6 py-6 flex flex-col space-y-5">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="font-display text-xl font-bold text-[#FAF8F5] hover:text-[#FFC700] transition-colors"
+                  className="font-display text-lg font-bold text-[#111111] hover:opacity-70 transition-opacity"
                 >
                   {link.name}
                 </a>
               ))}
 
-              <div className="pt-4 border-t border-[#FFC700]/20 space-y-3">
+              <div className="pt-4 border-t border-[#111111]/20 space-y-3">
                 <a
                   href="#location"
                   onClick={(e) => scrollToSection(e, "#location")}
-                  className="w-full py-3.5 bg-[#FFC700] text-[#111111] font-display text-xs font-black tracking-wider rounded-xl flex items-center justify-center gap-2 uppercase shadow-lg"
+                  className="w-full py-3 bg-[#111111] text-[#FFC700] font-display text-xs font-black tracking-wider rounded-full flex items-center justify-center gap-2 uppercase shadow-md"
                 >
-                  <MapPin className="w-4 h-4" />
+                  <MapPin className="w-4 h-4 fill-[#FFC700]" />
                   <span>МЫ НА КАРТЕ</span>
                 </a>
 
                 <a
-                  href="#location"
-                  onClick={(e) => scrollToSection(e, "#location")}
-                  className="w-full py-3 bg-[#FAF8F5]/10 text-[#FAF8F5] font-display text-xs font-bold tracking-wider rounded-xl flex items-center justify-center gap-2 uppercase border border-[#FAF8F5]/20"
+                  href="#delivery"
+                  onClick={(e) => scrollToSection(e, "#delivery")}
+                  className="w-full py-3 bg-transparent text-[#111111] border border-[#111111] font-display text-xs font-bold tracking-wider rounded-full flex items-center justify-center gap-2 uppercase"
                 >
-                  <Truck className="w-4 h-4 text-[#FFC700]" />
+                  <Truck className="w-4 h-4" />
                   <span>ДОСТАВКА ЯНДЕКС</span>
                 </a>
               </div>
