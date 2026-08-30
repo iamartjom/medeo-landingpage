@@ -23,8 +23,14 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full min-h-[90vh] md:min-h-screen bg-[#FFC700] text-[#111111] overflow-hidden flex flex-col justify-between pt-6 pb-12 select-none bg-grain">
+    <section className="relative w-full h-[calc(100vh-76px)] min-h-[580px] lg:min-h-[620px] max-h-[1080px] bg-[#FFC700] text-[#111111] overflow-hidden flex flex-col justify-center select-none bg-grain">
       
+      {/* QUARTER CIRCLE BACKDROP IN BOTTOM-RIGHT */}
+      <div
+        className="absolute bottom-0 right-0 w-[280px] sm:w-[360px] md:w-[420px] lg:w-[480px] xl:w-[520px] h-[280px] sm:h-[360px] md:h-[420px] lg:h-[480px] xl:h-[520px] rounded-tl-full bg-[#E5A100] pointer-events-none z-0 shadow-[-15px_-15px_45px_rgba(0,0,0,0.06)]"
+        aria-hidden="true"
+      />
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 my-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
         
         {/* LEFT HERO CONTENT */}
@@ -75,8 +81,8 @@ export default function Hero() {
 
         </div>
 
-        {/* RIGHT HERO CONTENT (EXACT UPLOADED PHOTO SHOWCASE) */}
-        <div className="lg:col-span-7 relative flex items-center justify-center min-h-[360px] sm:min-h-[440px] md:min-h-[500px]">
+        {/* RIGHT HERO CONTENT (CIRCULAR CUP CAROUSEL SHOWCASE) */}
+        <div className="lg:col-span-7 relative flex items-center justify-center min-h-[340px] sm:min-h-[420px] md:min-h-[480px]">
           <HeroProductStage />
         </div>
 
