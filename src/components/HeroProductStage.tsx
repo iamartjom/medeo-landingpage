@@ -138,6 +138,7 @@ export default function HeroProductStage() {
                 fill
                 sizes="(max-width: 640px) 280px, (max-width: 1024px) 400px, 480px"
                 priority
+                unoptimized
                 className="object-contain"
               />
             </motion.div>
