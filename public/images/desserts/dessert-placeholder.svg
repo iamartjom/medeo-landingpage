@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <rect width="500" height="500" rx="32" fill="#FAF8F5"/>
+  <circle cx="250" cy="250" r="160" fill="#FFC700" opacity="0.2"/>
+
+  <!-- Cake / Pie Base -->
+  <path d="M 140 330 L 360 330 L 330 200 L 170 200 Z" fill="#D2A679"/>
+  <path d="M 170 200 L 330 200 L 250 120 Z" fill="#F4D06F"/>
+  <path d="M 140 330 L 360 330 L 360 350 L 140 350 Z" fill="#A67C52"/>
+
+  <!-- Caramel Drizzle -->
+  <path d="M 250 120 C 230 160 270 180 240 220 C 220 250 260 280 250 330" stroke="#C86D27" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+  <!-- Nuts & Cinnamon dust -->
+  <circle cx="230" cy="180" r="5" fill="#8B4513"/>
+  <circle cx="270" cy="210" r="6" fill="#8B4513"/>
+  <circle cx="220" cy="260" r="4" fill="#8B4513"/>
+  <circle cx="280" cy="280" r="5" fill="#8B4513"/>
+
+  <!-- Badge -->
+  <rect x="170" y="390" width="160" height="32" rx="16" fill="#111111"/>
+  <text x="250" y="411" font-family="'Unbounded', sans-serif" font-size="12" font-weight="800" fill="#FFC700" text-anchor="middle" letter-spacing="2">MEDEO DESSERT</text>
+</svg>

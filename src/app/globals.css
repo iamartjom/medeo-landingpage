@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --medeo-yellow: #FFC700;
+    --medeo-yellow-hover: #E6B200;
+    --medeo-black: #111111;
+    --medeo-dark: #0D0D0D;
+    --medeo-offwhite: #FAF8F5;
+    --medeo-gray: #666666;
+    --medeo-light-gray: #EFECE6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--medeo-black);
+    color: var(--medeo-black);
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Typography Utilities */
+.font-display {
+  font-family: var(--font-unbounded), system-ui, sans-serif;
+}
+
+.font-sans {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Print / Paper Grain Texture */
+.bg-grain {
+  background-image: radial-gradient(rgba(17, 17, 17, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.bg-grain-dark {
+  background-image: radial-gradient(rgba(255, 199, 0, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFC700;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E6B200;
+}
+
+/* Selection */
+::selection {
+  background-color: #FFC700;
+  color: #111111;
+}
+
+/* Hide Scrollbar for Horizontal Swipe */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

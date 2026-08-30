@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <rect width="500" height="500" rx="32" fill="#FAF8F5"/>
+  <circle cx="250" cy="230" r="160" fill="#FFC700" opacity="0.15"/>
+  
+  <!-- Glass/Cup Illustration -->
+  <path d="M 170 120 L 330 120 L 300 400 L 200 400 Z" fill="#111111" opacity="0.05"/>
+  <!-- Layers -->
+  <path d="M 175 140 L 325 140 L 310 260 L 190 260 Z" fill="#8B4513" opacity="0.8"/>
+  <path d="M 190 260 L 310 260 L 302 330 L 198 330 Z" fill="#D2B48C" opacity="0.9"/>
+  <path d="M 198 330 L 302 330 L 295 390 L 205 390 Z" fill="#FFF8DC"/>
+  
+  <!-- Steam Curves -->
+  <path d="M 220 90 Q 210 70 230 50" stroke="#FFC700" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M 250 95 Q 265 75 245 55" stroke="#111111" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M 280 90 Q 270 70 290 50" stroke="#FFC700" stroke-width="4" stroke-linecap="round" fill="none"/>
+  
+  <!-- MEDEO Tag -->
+  <rect x="180" y="425" width="140" height="32" rx="16" fill="#111111"/>
+  <text x="250" y="446" font-family="'Unbounded', sans-serif" font-size="12" font-weight="800" fill="#FFC700" text-anchor="middle" letter-spacing="2">MEDEO DRINK</text>
+</svg>
