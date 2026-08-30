@@ -21,11 +21,11 @@ export const HERO_DRINKS = [
     title: "АЙС МОККО СПЕШЕЛТИ",
     subtitle: "Освежающий эспрессо со льдом, шоколадный ганаш и сливочная пенка",
     price: "260 ₽",
-    src: "/images/hero/ChatGPT Image 30. Aug. 2026, 21_48_52.png",
+    src: "/images/hero/hero-iced-specialty.png",
     alt: "MEDEO Iced Mocha Specialty",
     badge: "NEW COLD BREW",
     tilt: -16,
-    scaleMultiplier: 0.98,
+    scaleMultiplier: 1.0,
   },
   {
     id: "latte",
@@ -36,7 +36,7 @@ export const HERO_DRINKS = [
     alt: "MEDEO Classic Latte Art",
     badge: "100% АРАБИКА",
     tilt: -18,
-    scaleMultiplier: 0.82,
+    scaleMultiplier: 1.0,
   },
 ];
 
@@ -116,7 +116,7 @@ export default function HeroProductStage() {
                 ease: [0.4, 0, 0.2, 1],
               },
             }}
-            className="relative w-[260px] sm:w-[320px] md:w-[380px] lg:w-[460px] h-[290px] sm:h-[360px] md:h-[440px] lg:h-[540px] flex items-center justify-center cursor-pointer"
+            className="relative w-[280px] sm:w-[340px] md:w-[400px] lg:w-[460px] h-[310px] sm:h-[380px] md:h-[460px] lg:h-[550px] flex items-center justify-center cursor-pointer"
             onClick={() => setCurrentIndex((prev) => (prev + 1) % HERO_DRINKS.length)}
           >
             {/* Subtle organic hovering float while resting */}
