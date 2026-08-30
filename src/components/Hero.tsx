@@ -27,7 +27,7 @@ export default function Hero() {
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 my-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
         
-        {/* LEFT HERO CONTENT (30-35% WIDTH ON DESKTOP) */}
+        {/* LEFT HERO CONTENT */}
         <div className="lg:col-span-5 flex flex-col justify-center text-left">
           
           {/* MAIN HEADLINE */}
@@ -51,7 +51,7 @@ export default function Hero() {
             <p className="font-medium text-[#111111]/85">Мы всегда рады вас видеть.</p>
           </div>
 
-          {/* CTA BUTTONS (HORIZONTAL ON DESKTOP) */}
+          {/* CTA BUTTONS */}
           <div className="flex flex-wrap items-center gap-3">
             {/* PRIMARY BLACK BUTTON */}
             <a
@@ -75,21 +75,9 @@ export default function Hero() {
 
         </div>
 
-        {/* RIGHT HERO CONTENT (LARGE OVERSIZED TYPOGRAPHY + DRINK SHOWCASE) */}
-        <div className="lg:col-span-7 relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] md:min-h-[520px]">
-          
-          {/* OVERSIZED BLACK POSTER TYPOGRAPHY: MEDEO (BEHIND DRINKS) */}
-          <div className="absolute right-[-10%] top-[0%] w-[120%] h-full flex items-center justify-end pointer-events-none select-none z-0 overflow-hidden">
-            <span className="font-display text-[22vw] sm:text-[24vw] md:text-[25vw] font-black text-[#111111] opacity-90 leading-none tracking-tighter text-right transform rotate-[-4deg]">
-              MEDEO
-            </span>
-          </div>
-
-          {/* DRINK CAROUSEL SHOWCASE */}
-          <div className="relative z-10 w-full">
-            <HeroProductStage />
-          </div>
-
+        {/* RIGHT HERO CONTENT (EXACT UPLOADED PHOTO SHOWCASE) */}
+        <div className="lg:col-span-7 relative flex items-center justify-center min-h-[360px] sm:min-h-[440px] md:min-h-[500px]">
+          <HeroProductStage />
         </div>
 
       </div>
