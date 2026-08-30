@@ -11,23 +11,24 @@ export interface HeroTripleComposition {
   rightImage: string;
 }
 
+// EXCLUSIVELY USES THE 5 USER-UPLOADED PHOTOS FOR HERO ROTATION
 const HERO_COMPOSITIONS: HeroTripleComposition[] = [
   {
     id: "comp-1",
-    leftImage: "/images/hero/medeo-dessert-cheesecake.png",
-    centerImage: "/images/hero/medeo-cup-latte.png",
+    leftImage: "/images/hero/hero-caramel-tarts.png",
+    centerImage: "/images/hero/hero-latte-cup.png",
     rightImage: "/images/hero/hero-greek-hotdog.png",
   },
   {
     id: "comp-2",
-    leftImage: "/images/hero/hero-caramel-tarts.png",
-    centerImage: "/images/hero/medeo-cup-whipped.png",
-    rightImage: "/images/hero/hero-brownie-stack.png",
+    leftImage: "/images/hero/hero-brownie-stack.png",
+    centerImage: "/images/hero/hero-whipped-cup.png",
+    rightImage: "/images/hero/hero-greek-hotdog.png",
   },
   {
     id: "comp-3",
-    leftImage: "/images/hero/medeo-dessert-slice.png",
-    centerImage: "/images/hero/medeo-cup-latte.png",
+    leftImage: "/images/hero/hero-caramel-tarts.png",
+    centerImage: "/images/hero/hero-latte-cup.png",
     rightImage: "/images/hero/hero-greek-hotdog.png",
   },
 ];
@@ -85,7 +86,7 @@ export default function HeroProductStage() {
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="relative w-full h-full flex items-center justify-center"
           >
-            {/* LEFT PRODUCT (DESSERT) */}
+            {/* LEFT PRODUCT (DESSERT FROM UPLOADED PHOTOS) */}
             <motion.div
               animate={{ y: [0, -10, 0], rotate: [-4, -2, -4] }}
               transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
@@ -100,7 +101,7 @@ export default function HeroProductStage() {
               />
             </motion.div>
 
-            {/* CENTER DOMINANT PRODUCT (MEDEO COFFEE CUP) */}
+            {/* CENTER DOMINANT PRODUCT (MEDEO COFFEE CUP FROM UPLOADED PHOTOS) */}
             <motion.div
               animate={{ y: [0, -14, 0] }}
               transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
@@ -108,14 +109,14 @@ export default function HeroProductStage() {
             >
               <Image
                 src={currentComp.centerImage}
-                alt="MEDEO Specialty Coffee"
+                alt="MEDEO Coffee Cup"
                 fill
                 priority
                 className="object-contain"
               />
             </motion.div>
 
-            {/* RIGHT PRODUCT (HOT DOG) */}
+            {/* RIGHT PRODUCT (HOT DOG FROM UPLOADED PHOTOS) */}
             <motion.div
               animate={{ y: [0, -12, 0], rotate: [4, 6, 4] }}
               transition={{ duration: 5.6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
