@@ -48,13 +48,14 @@ export default function Hero() {
             С MEDEO
           </h1>
 
-          {/* PARAGRAPH TEXT - FULL WIDTH UNDER H1 INSTEAD OF NARROW COLUMN */}
-          <p className="hidden lg:block font-sans text-sm md:text-base text-[#111111]/90 font-medium leading-relaxed max-w-lg mb-3">
-            Мы готовим любимый кофе, сочные хот-доги и свежую выпечку, чтобы вы чувствовали тепло и заботу в каждой детали.
+          {/* PARAGRAPH TEXT */}
+          <p className="hidden lg:block font-sans text-sm md:text-base text-[#111111]/90 font-medium leading-relaxed max-w-xl mb-3">
+            Мы готовим любимый кофе, сочные хот-доги и свежую выпечку, <br />
+            чтобы вы чувствовали тепло и заботу в каждой детали.
           </p>
 
           {/* SUB-PARAGRAPH WITH BOLDER CALLOUT */}
-          <div className="hidden lg:block font-sans text-sm md:text-base text-[#111111] leading-relaxed max-w-lg mb-8">
+          <div className="hidden lg:block font-sans text-sm md:text-base text-[#111111] leading-relaxed max-w-xl mb-8">
             <p className="font-bold">
               Забегайте за своим настроением! <span className="font-medium text-[#111111]/85">Мы всегда рады вас видеть.</span>
             </p>
