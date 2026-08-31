@@ -31,39 +31,37 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-12 my-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 my-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 items-center relative z-10">
         
         {/* CUP ANIMATION STAGE - LARGE & PROMINENT ON MOBILE (order-1), SECOND ON DESKTOP (lg:order-2) */}
-        <div className="order-1 lg:order-2 lg:col-span-7 relative flex items-center justify-center w-full">
+        <div className="order-1 lg:order-2 lg:col-span-6 xl:col-span-6 relative flex items-center justify-center lg:justify-end w-full">
           <HeroProductStage />
         </div>
 
         {/* HERO TEXT & CTA CONTENT - SECOND ON MOBILE (order-2), FIRST ON DESKTOP (lg:order-1) */}
-        <div className="order-2 lg:order-1 lg:col-span-5 flex flex-col justify-center text-center lg:text-left items-center lg:items-start pt-2 sm:pt-4 lg:pt-0 pb-2 lg:pb-0">
+        <div className="order-2 lg:order-1 lg:col-span-6 xl:col-span-6 flex flex-col justify-center text-left items-start pt-2 sm:pt-4 lg:pt-0 pb-2 lg:pb-0">
           
           {/* MAIN HEADLINE */}
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#111111] uppercase leading-[0.95] mb-4 sm:mb-5 lg:mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#111111] uppercase leading-[0.95] mb-4 sm:mb-5 lg:mb-6 text-left">
             ХОРОШИЙ ДЕНЬ <br />
             НАЧИНАЕТСЯ <br />
             С MEDEO
           </h1>
 
-          {/* PARAGRAPH TEXT - HIDDEN ON MOBILE */}
-          <p className="hidden lg:block font-sans text-sm md:text-base text-[#111111]/90 font-medium leading-relaxed max-w-sm mb-4">
-            Мы готовим любимый кофе, <br />
-            сочные хот-доги и свежую выпечку, <br />
-            чтобы вы чувствовали тепло <br />
-            и заботу в каждой детали.
+          {/* PARAGRAPH TEXT - FULL WIDTH UNDER H1 INSTEAD OF NARROW COLUMN */}
+          <p className="hidden lg:block font-sans text-sm md:text-base text-[#111111]/90 font-medium leading-relaxed max-w-lg mb-3">
+            Мы готовим любимый кофе, сочные хот-доги и свежую выпечку, чтобы вы чувствовали тепло и заботу в каждой детали.
           </p>
 
-          {/* SUB-PARAGRAPH WITH BOLDER CALLOUT - HIDDEN ON MOBILE */}
-          <div className="hidden lg:block font-sans text-sm md:text-base text-[#111111] leading-relaxed max-w-sm mb-8">
-            <p className="font-bold">Забегайте за своим настроением!</p>
-            <p className="font-medium text-[#111111]/85">Мы всегда рады вас видеть.</p>
+          {/* SUB-PARAGRAPH WITH BOLDER CALLOUT */}
+          <div className="hidden lg:block font-sans text-sm md:text-base text-[#111111] leading-relaxed max-w-lg mb-8">
+            <p className="font-bold">
+              Забегайте за своим настроением! <span className="font-medium text-[#111111]/85">Мы всегда рады вас видеть.</span>
+            </p>
           </div>
 
           {/* CTA BUTTONS */}
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mt-1 sm:mt-2 lg:mt-0">
+          <div className="flex flex-wrap items-center justify-start gap-3 mt-1 sm:mt-2 lg:mt-0">
             {/* PRIMARY BLACK BUTTON */}
             <a
               href="#location"
