@@ -45,7 +45,7 @@ export default function MenuItem({ item }: MenuItemProps) {
         </div>
 
         {/* TITLE */}
-        <h3 className="font-display font-black text-xl md:text-2xl text-[#111111] tracking-tight mb-3">
+        <h3 className="font-display font-black text-xl md:text-2xl text-[#111111] tracking-tight mb-3 text-center">
           {item.name}
         </h3>
 
