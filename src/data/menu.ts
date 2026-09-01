@@ -1,3 +1,8 @@
+export interface PriceOption {
+  volume: string;
+  price: string;
+}
+
 export interface MenuItemType {
   id: string;
   name: string;
@@ -8,6 +13,7 @@ export interface MenuItemType {
   image: string;
   badge?: 'НОВИНКА' | 'СЕЗОННОЕ' | 'ХИТ';
   featured?: boolean;
+  prices?: PriceOption[];
 }
 
 export interface CategoryType {
@@ -24,49 +30,75 @@ export const CATEGORIES: CategoryType[] = [
 ];
 
 export const MENU_ITEMS: MenuItemType[] = [
-  // НАПИТКИ
+  // НАПИТКИ (ОБНОВЛЕНЫ ПО НОВОМУ МЕНЮ MEDEO)
   {
     id: 'espresso',
     name: 'Эспрессо',
     category: 'drinks',
-    weight: '200 мл',
-    price: '100 ₽',
-    image: '/images/hero/medeo-cup-latte.png',
+    weight: '30 / 60 мл',
+    price: 'от 60 ₽',
+    image: '/images/hero/menu-espresso.png',
+    prices: [
+      { volume: '30 мл', price: '60 ₽' },
+      { volume: '60 мл', price: '100 ₽' },
+    ],
   },
   {
     id: 'americano',
     name: 'Американо',
     category: 'drinks',
-    weight: '200 мл',
-    price: '120 ₽',
-    image: '/images/hero/medeo-cup-latte.png',
+    weight: '250 / 350 / 450 мл',
+    price: 'от 70 ₽',
+    image: '/images/hero/menu-americano.png',
+    prices: [
+      { volume: '250 мл', price: '70 ₽' },
+      { volume: '350 мл', price: '135 ₽' },
+      { volume: '450 мл', price: '185 ₽' },
+    ],
   },
   {
     id: 'cappuccino',
     name: 'Капучино',
     category: 'drinks',
-    weight: '300 мл',
-    price: '160 ₽',
-    image: '/images/hero/medeo-cup-whipped.png',
+    weight: '250 / 350 / 450 мл',
+    price: 'от 100 ₽',
+    image: '/images/hero/menu-cappuccino.png',
+    badge: 'ХИТ',
     featured: true,
+    prices: [
+      { volume: '250 мл', price: '100 ₽' },
+      { volume: '350 мл', price: '160 ₽' },
+      { volume: '450 мл', price: '205 ₽' },
+    ],
   },
   {
     id: 'latte',
     name: 'Латте',
     category: 'drinks',
-    weight: '300 мл',
-    price: '170 ₽',
-    image: '/images/hero/medeo-cup-latte.png',
+    weight: '250 / 350 / 450 мл',
+    price: 'от 100 ₽',
+    image: '/images/hero/menu-latte.png',
     featured: true,
+    prices: [
+      { volume: '250 мл', price: '100 ₽' },
+      { volume: '350 мл', price: '160 ₽' },
+      { volume: '450 мл', price: '205 ₽' },
+    ],
   },
   {
-    id: 'raf',
-    name: 'Раф',
+    id: 'flat-white',
+    name: 'Флэт Уайт',
     category: 'drinks',
-    weight: '300 мл',
-    price: '190 ₽',
-    image: '/images/hero/medeo-cup-whipped.png',
-    badge: 'ХИТ',
+    weight: '250 / 350 / 450 мл',
+    price: 'от 140 ₽',
+    image: '/images/hero/menu-flatwhite.png',
+    badge: 'НОВИНКА',
+    featured: true,
+    prices: [
+      { volume: '250 мл', price: '140 ₽' },
+      { volume: '350 мл', price: '185 ₽' },
+      { volume: '450 мл', price: '220 ₽' },
+    ],
   },
 
   // ХОТ-ДОГИ
