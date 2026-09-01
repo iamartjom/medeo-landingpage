@@ -25,9 +25,21 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-screen lg:h-screen lg:min-h-[640px] lg:max-h-[1080px] bg-[#FFC700] text-[#111111] overflow-hidden flex flex-col justify-center pt-20 sm:pt-24 pb-8 lg:py-0 select-none bg-grain">
       
-      {/* DESKTOP ONLY: QUARTER CIRCLE BACKDROP IN BOTTOM-RIGHT */}
+      {/* ATMOSPHERIC DEPTH, SOFT SHADOWS & WARM LIGHTING GRADIENTS */}
       <div
-        className="hidden lg:block absolute bottom-0 right-0 w-[480px] xl:w-[520px] h-[480px] xl:h-[520px] rounded-tl-full bg-[#E5A100] pointer-events-none z-0 shadow-[-15px_-15px_45px_rgba(0,0,0,0.06)]"
+        className="absolute inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_90%_75%_at_35%_35%,#FFD84D_0%,transparent_65%),radial-gradient(circle_at_100%_100%,rgba(168,88,0,0.28)_0%,transparent_55%),radial-gradient(circle_at_0%_100%,rgba(180,98,0,0.18)_0%,transparent_45%),radial-gradient(circle_at_100%_0%,rgba(175,95,0,0.14)_0%,transparent_40%)]"
+        aria-hidden="true"
+      />
+
+      {/* SOFT AMBIENT GLOW/SHADOW BEHIND CUP STAGE */}
+      <div
+        className="hidden lg:block absolute right-[8%] top-[30%] w-[460px] h-[460px] rounded-full bg-[#D48800]/20 blur-3xl pointer-events-none z-0"
+        aria-hidden="true"
+      />
+
+      {/* DESKTOP ONLY: QUARTER CIRCLE BACKDROP IN BOTTOM-RIGHT WITH DEEP SOFT ELEVATION */}
+      <div
+        className="hidden lg:block absolute bottom-0 right-0 w-[480px] xl:w-[520px] h-[480px] xl:h-[520px] rounded-tl-full bg-gradient-to-br from-[#E6A000] to-[#D98E00] pointer-events-none z-0 shadow-[-28px_-28px_65px_rgba(0,0,0,0.08),_-6px_-6px_25px_rgba(160,80,0,0.22)]"
         aria-hidden="true"
       />
 
