@@ -87,7 +87,7 @@ export const MENU_ITEMS: MenuItemType[] = [
   },
   {
     id: 'flat-white',
-    name: 'Флэт Уайт',
+    name: 'Флет Уайт',
     category: 'drinks',
     weight: '250 / 350 / 450 мл',
     price: 'от 140 ₽',

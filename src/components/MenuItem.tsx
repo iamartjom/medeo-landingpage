@@ -16,14 +16,14 @@ export default function MenuItem({ item }: MenuItemProps) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      className="group bg-[#FFFFFF] p-5 rounded-2xl border border-[#111111]/5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer"
+      className="group bg-[#FFFFFF] p-5 sm:p-6 rounded-[28px] border border-[#111111]/6 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between"
     >
       <div>
         {/* PRODUCT IMAGE CONTAINER */}
-        <div className="relative w-full aspect-square mb-4 overflow-hidden rounded-xl bg-[#FAF8F5]/80 flex items-center justify-center p-3">
+        <div className="relative w-full aspect-square mb-5 overflow-hidden rounded-2xl bg-[#FAF8F5]/60 flex items-center justify-center p-4">
           {item.badge && (
-            <div className="absolute top-2.5 left-2.5 z-10">
-              <span className="px-2.5 py-0.5 rounded-full font-display text-[9px] font-black tracking-wider uppercase bg-[#FFC700] text-[#111111]">
+            <div className="absolute top-3 left-3 z-10">
+              <span className="px-3 py-1 rounded-full font-display text-[9px] font-black tracking-wider uppercase bg-[#FFC700] text-[#111111] shadow-sm">
                 {item.badge}
               </span>
             </div>
@@ -39,40 +39,46 @@ export default function MenuItem({ item }: MenuItemProps) {
               alt={item.name}
               fill
               unoptimized
-              className="object-contain drop-shadow-md"
+              className="object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.08)]"
             />
           </motion.div>
         </div>
 
         {/* TITLE */}
-        <h3 className="font-display font-black text-base md:text-lg text-[#111111] tracking-tight mb-2">
+        <h3 className="font-display font-black text-xl md:text-2xl text-[#111111] tracking-tight mb-3">
           {item.name}
         </h3>
 
-        {/* DETAILED PRICE / VOLUME TABLE IF AVAILABLE (DRINKS) */}
+        {/* DETAILED PRICE / VOLUME PILL CONTAINER (EXACT CARD LAYOUT) */}
         {item.prices && item.prices.length > 0 && (
-          <div className="mb-3 flex flex-col gap-1 bg-[#FAF8F5] p-2.5 rounded-xl border border-[#111111]/5">
+          <div className="mb-2 flex flex-col gap-2 bg-[#FAF8F5] p-3.5 rounded-2xl border border-[#111111]/4">
             {item.prices.map((p) => (
-              <div key={p.volume} className="flex items-center justify-between text-xs font-bold text-[#111111]">
-                <span className="font-sans text-[11px] font-semibold text-[#111111]/65">{p.volume}</span>
-                <span className="font-display text-[11.5px] font-extrabold text-[#111111]">{p.price}</span>
+              <div key={p.volume} className="flex items-center justify-between">
+                <span className="font-display text-xs sm:text-sm font-semibold text-[#111111]/60">
+                  {p.volume}
+                </span>
+                <span className="font-display text-xs sm:text-sm font-black text-[#111111]">
+                  {p.price}
+                </span>
               </div>
             ))}
           </div>
         )}
       </div>
 
-      {/* BASE PRICE FOOTER */}
-      <div className="pt-2.5 border-t border-[#111111]/5 flex items-baseline justify-between">
-        <span className="font-display text-sm md:text-base font-black text-[#111111]">
-          {item.price}
-        </span>
-        {item.weight && !item.prices && (
-          <span className="font-sans text-[11px] font-medium text-[#111111]/50">
-            {item.weight}
+      {/* SINGLE PRICE (FOR HOTDOGS / DESSERTS) */}
+      {!item.prices && (
+        <div className="pt-3 border-t border-[#111111]/5 flex items-baseline justify-between mt-2">
+          <span className="font-display text-base font-black text-[#111111]">
+            {item.price}
           </span>
-        )}
-      </div>
+          {item.weight && (
+            <span className="font-sans text-xs font-medium text-[#111111]/50">
+              {item.weight}
+            </span>
+          )}
+        </div>
+      )}
     </motion.div>
   );
 }
