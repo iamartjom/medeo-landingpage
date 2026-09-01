@@ -63,7 +63,6 @@ export const MENU_ITEMS: MenuItemType[] = [
     weight: '250 / 350 / 450 мл',
     price: 'от 100 ₽',
     image: '/images/hero/menu-cappuccino.png',
-    badge: 'ХИТ',
     featured: true,
     prices: [
       { volume: '250 мл', price: '100 ₽' },
@@ -92,7 +91,6 @@ export const MENU_ITEMS: MenuItemType[] = [
     weight: '250 / 350 / 450 мл',
     price: 'от 140 ₽',
     image: '/images/hero/menu-flatwhite.png',
-    badge: 'НОВИНКА',
     featured: true,
     prices: [
       { volume: '250 мл', price: '140 ₽' },
