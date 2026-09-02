@@ -254,7 +254,7 @@ export const MENU_ITEMS: MenuItemType[] = [
     name: 'Синокейк с пеканом',
     category: 'desserts',
     price: '220 ₽',
-    image: '/images/hero/menu-dessert-pecan.png',
+    image: '/images/hero/menu-dessert-sinocake-pecan.png',
     featured: true,
   },
   {
@@ -262,7 +262,16 @@ export const MENU_ITEMS: MenuItemType[] = [
     name: 'Чизкейк Нью-Йорк',
     category: 'desserts',
     price: '210 ₽',
-    image: '/images/hero/menu-dessert-cheesecake-ny.png',
+    image: '/images/hero/menu-dessert-cheesecake-classic.png',
+    featured: true,
+  },
+  {
+    id: 'choco-pecan-cheesecake',
+    name: 'Чизкейк с пеканом',
+    description: 'шоколадный',
+    category: 'desserts',
+    price: '220 ₽',
+    image: '/images/hero/menu-dessert-choco-pecan-cheesecake.png',
     featured: true,
   },
   {
@@ -279,7 +288,7 @@ export const MENU_ITEMS: MenuItemType[] = [
     description: 'миндальный',
     category: 'desserts',
     price: '180 ₽',
-    image: '/images/hero/menu-dessert-almond-cookies.png',
+    image: '/images/hero/menu-dessert-almond-pie.png',
     featured: true,
   },
   {
@@ -287,8 +296,7 @@ export const MENU_ITEMS: MenuItemType[] = [
     name: 'Яблочно-карамельный пай',
     category: 'desserts',
     price: '200 ₽',
-    image: '/images/hero/menu-dessert-apple-pie.png',
-    featured: true,
+    image: '/images/hero/menu-dessert-apple-caramel-pie.png',
   },
   {
     id: 'brownie',
