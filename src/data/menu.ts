@@ -140,10 +140,10 @@ export const MENU_ITEMS: MenuItemType[] = [
   {
     id: 'cacao',
     name: 'Какао',
-    description: 'без сахара',
     category: 'drinks',
     weight: '250 / 350 / 450 мл',
     price: 'от 115 ₽',
+    badge: 'ХИТ СЕЗОНА',
     image: '/images/hero/menu-cacao.png',
     prices: [
       { volume: '250 мл', price: '115 ₽' },
