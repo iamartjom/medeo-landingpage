@@ -11,7 +11,7 @@ export interface MenuItemType {
   weight?: string;
   price: string;
   image: string;
-  badge?: 'НОВИНКА' | 'СЕЗОННОЕ' | 'ХИТ';
+  badge?: string;
   featured?: boolean;
   prices?: PriceOption[];
 }
@@ -213,7 +213,7 @@ export const MENU_ITEMS: MenuItemType[] = [
     image: '/images/hotdogs/hotdog-placeholder.svg',
   },
 
-  // ДЕСЕРТЫ & СЕЗОННОЕ
+  // ДЕСЕРТЫ
   {
     id: 'pecan-cheesecake',
     name: 'Чизкейк с пеканом',
@@ -232,6 +232,63 @@ export const MENU_ITEMS: MenuItemType[] = [
     image: '/images/hero/hero-brownie-stack.png',
     featured: true,
   },
+
+  // СЕЗОННОЕ МЕНЮ
+  {
+    id: 'maple-cappuccino',
+    name: 'Кленовый капучино',
+    category: 'autumn',
+    weight: '200 / 300 / 400 мл',
+    price: 'от 160 ₽',
+    image: '/images/hero/menu-maple-cappuccino.png',
+    featured: true,
+    prices: [
+      { volume: '200 мл', price: '160 ₽' },
+      { volume: '300 мл', price: '185 ₽' },
+      { volume: '400 мл', price: '225 ₽' },
+    ],
+  },
+  {
+    id: 'raspberry-cacao',
+    name: 'Какао малиновый',
+    category: 'autumn',
+    badge: 'ХИТ СЕЗОНА',
+    weight: '300 / 400 мл',
+    price: 'от 175 ₽',
+    image: '/images/hero/menu-raspberry-cacao.png',
+    featured: true,
+    prices: [
+      { volume: '300 мл', price: '175 ₽' },
+      { volume: '400 мл', price: '215 ₽' },
+    ],
+  },
+  {
+    id: 'salted-caramel-latte',
+    name: 'Латте соленая карамель',
+    category: 'autumn',
+    badge: 'ТОП ПРОДАЖ',
+    weight: '300 / 400 мл',
+    price: 'от 189 ₽',
+    image: '/images/hero/menu-salted-caramel-latte.png',
+    featured: true,
+    prices: [
+      { volume: '300 мл', price: '189 ₽' },
+      { volume: '400 мл', price: '228 ₽' },
+    ],
+  },
+  {
+    id: 'choco-latte',
+    name: 'Шоко-латте',
+    category: 'autumn',
+    weight: '300 / 400 мл',
+    price: 'от 189 ₽',
+    image: '/images/hero/menu-choco-latte.png',
+    featured: true,
+    prices: [
+      { volume: '300 мл', price: '189 ₽' },
+      { volume: '400 мл', price: '228 ₽' },
+    ],
+  },
   {
     id: 'caramel-tarts',
     name: 'Тарталетки с карамелью',
@@ -240,7 +297,6 @@ export const MENU_ITEMS: MenuItemType[] = [
     price: '190 ₽',
     image: '/images/hero/hero-caramel-tarts.png',
     badge: 'СЕЗОННОЕ',
-    featured: true,
   },
   {
     id: 'caramel-apple-pie',

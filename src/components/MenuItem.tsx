@@ -23,7 +23,18 @@ export default function MenuItem({ item }: MenuItemProps) {
         <div className="relative w-full aspect-square mb-5 overflow-hidden rounded-2xl bg-[#FAF8F5]/60 flex items-center justify-center p-4">
           {item.badge && (
             <div className="absolute top-3 left-3 z-10">
-              <span className="px-3 py-1 rounded-full font-display text-[9px] font-black tracking-wider uppercase bg-[#FFC700] text-[#111111] shadow-sm">
+              <span
+                className={`px-3 py-1 rounded-full font-display text-[9px] font-black tracking-wider uppercase shadow-sm flex items-center gap-1 ${
+                  item.badge === "ХИТ СЕЗОНА"
+                    ? "bg-[#9A1231] text-white"
+                    : item.badge === "ТОП ПРОДАЖ"
+                    ? "bg-[#C44E0E] text-white"
+                    : "bg-[#FFC700] text-[#111111]"
+                }`}
+              >
+                {(item.badge === "ХИТ СЕЗОНА" || item.badge === "ТОП ПРОДАЖ") && (
+                  <span className="text-[10px]">★</span>
+                )}
                 {item.badge}
               </span>
             </div>
