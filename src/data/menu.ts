@@ -292,11 +292,21 @@ export const MENU_ITEMS: MenuItemType[] = [
     featured: true,
   },
   {
+    id: 'cheesecake-apple-caramel',
+    name: 'Чизкейк',
+    description: 'яблочно-карамельный',
+    category: 'desserts',
+    price: '210 ₽',
+    image: '/images/hero/menu-dessert-apple-caramel-cheesecake.png',
+    featured: true,
+  },
+  {
     id: 'apple-caramel-pie',
     name: 'Яблочно-карамельный пай',
     category: 'desserts',
     price: '200 ₽',
     image: '/images/hero/menu-dessert-apple-caramel-pie.png',
+    featured: true,
   },
   {
     id: 'brownie',
