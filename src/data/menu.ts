@@ -179,30 +179,6 @@ export const MENU_ITEMS: MenuItemType[] = [
 
   // ХОТ-ДОГИ
   {
-    id: 'french-dog',
-    name: 'Французский',
-    description: 'в хрустящем багете',
-    category: 'hotdogs',
-    weight: '180 г',
-    price: '190 ₽',
-    image: '/images/hotdogs/menu-french-dog.png',
-    prices: [
-      { volume: '180 г', price: '190 ₽' },
-    ],
-  },
-  {
-    id: 'american-dog',
-    name: 'Американский',
-    description: 'с маринованным огурчиком',
-    category: 'hotdogs',
-    weight: '210 г',
-    price: '220 ₽',
-    image: '/images/hotdogs/menu-american-dog.png',
-    prices: [
-      { volume: '210 г', price: '220 ₽' },
-    ],
-  },
-  {
     id: 'greek-dog',
     name: 'Греческий',
     description: 'с фетой и маслинами',
@@ -256,18 +232,6 @@ export const MENU_ITEMS: MenuItemType[] = [
     ],
   },
   {
-    id: 'bavarian-dog',
-    name: 'Баварский',
-    description: 'с капустой и жареным луком',
-    category: 'hotdogs',
-    weight: '220 г',
-    price: '230 ₽',
-    image: '/images/hotdogs/menu-bavarian-dog.png',
-    prices: [
-      { volume: '220 г', price: '230 ₽' },
-    ],
-  },
-  {
     id: 'danish-dog',
     name: 'Датский',
     description: 'с соусом барбекю и пай',
@@ -281,15 +245,51 @@ export const MENU_ITEMS: MenuItemType[] = [
     ],
   },
   {
+    id: 'bavarian-dog',
+    name: 'Баварский',
+    description: 'с квашеной капустой и луком',
+    category: 'hotdogs',
+    weight: '220 г',
+    price: '230 ₽',
+    image: '/images/hotdogs/menu-bavarian-dog.png',
+    prices: [
+      { volume: '220 г', price: '230 ₽' },
+    ],
+  },
+  {
+    id: 'american-dog',
+    name: 'Американский',
+    description: 'с маринованными огурчиками',
+    category: 'hotdogs',
+    weight: '210 г',
+    price: '220 ₽',
+    image: '/images/hotdogs/menu-american-dog.png',
+    prices: [
+      { volume: '210 г', price: '220 ₽' },
+    ],
+  },
+  {
     id: 'fresh-dog',
-    name: 'Фреш-дог',
-    description: 'со свежими огурцами и томатами',
+    name: 'Фреш',
+    description: 'со свежим огурцом и томатами',
     category: 'hotdogs',
     weight: '210 г',
     price: '220 ₽',
     image: '/images/hotdogs/menu-fresh-dog.png',
     prices: [
       { volume: '210 г', price: '220 ₽' },
+    ],
+  },
+  {
+    id: 'cheese-dog',
+    name: 'Сырный',
+    description: 'с сыром и картофелем пай',
+    category: 'hotdogs',
+    weight: '210 г',
+    price: '230 ₽',
+    image: '/images/hotdogs/menu-cheese-dog.png',
+    prices: [
+      { volume: '210 г', price: '230 ₽' },
     ],
   },
 
