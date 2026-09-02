@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { MapPin } from "lucide-react";
 
 export default function About() {
   return (
@@ -37,10 +38,23 @@ export default function About() {
             </div>
 
             {/* SIGNATURE ACCENT */}
-            <div className="mt-6">
+            <div className="mt-5">
               <span className="font-serif italic text-lg sm:text-xl font-bold text-[#111111] tracking-tight">
                 Дмитрий и команда MEDEO
               </span>
+            </div>
+
+            {/* MAPS BUTTON */}
+            <div className="mt-6">
+              <a
+                href="https://yandex.ru/maps/-/CTXAuY8F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#111111] text-[#FAF8F5] font-display text-xs md:text-sm font-black tracking-wider uppercase hover:bg-[#FFC700] hover:text-[#111111] transition-all duration-300 shadow-md active:scale-95"
+              >
+                <MapPin className="w-4 h-4 text-[#FFC700] group-hover:text-[#111111] transition-colors" />
+                МЫ НА КАРТАХ
+              </a>
             </div>
           </motion.div>
 
