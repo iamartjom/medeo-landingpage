@@ -151,6 +151,19 @@ export const MENU_ITEMS: MenuItemType[] = [
       { volume: '450 мл', price: '205 ₽' },
     ],
   },
+  {
+    id: 'hot-chocolate',
+    name: 'Горячий шоколад',
+    category: 'drinks',
+    weight: '250 / 350 / 450 мл',
+    price: 'от 115 ₽',
+    image: '/images/hero/menu-hot-chocolate.png',
+    prices: [
+      { volume: '250 мл', price: '115 ₽' },
+      { volume: '350 мл', price: '160 ₽' },
+      { volume: '450 мл', price: '205 ₽' },
+    ],
+  },
 
   // ХОТ-ДОГИ
   {
