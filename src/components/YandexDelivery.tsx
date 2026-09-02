@@ -54,6 +54,7 @@ export default function YandexDelivery() {
                 src="/images/yandex-bag.jpg"
                 alt="MEDEO Yandex Delivery Packaging"
                 fill
+                unoptimized
                 className="object-cover"
               />
             </div>
