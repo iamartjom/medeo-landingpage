@@ -250,18 +250,8 @@ export const MENU_ITEMS: MenuItemType[] = [
 
   // ДЕСЕРТЫ
   {
-    id: 'sweet-collection',
-    name: 'Сладкая коллекция',
-    description: 'десерты в ассортименте',
-    category: 'desserts',
-    price: 'от 180 ₽',
-    image: '/images/hero/menu-desserts-collection.png',
-    badge: 'ХИТ',
-    featured: true,
-  },
-  {
-    id: 'pecan-cheesecake',
-    name: 'Чизкейк с пеканом',
+    id: 'sinocake-pecan',
+    name: 'Синокейк с пеканом',
     category: 'desserts',
     price: '220 ₽',
     image: '/images/hero/menu-dessert-pecan.png',
@@ -284,8 +274,9 @@ export const MENU_ITEMS: MenuItemType[] = [
     featured: true,
   },
   {
-    id: 'almond-cookies',
-    name: 'Миндальное печенье',
+    id: 'mini-pie-almond',
+    name: 'Мини пирог',
+    description: 'миндальный',
     category: 'desserts',
     price: '180 ₽',
     image: '/images/hero/menu-dessert-almond-cookies.png',
@@ -297,6 +288,7 @@ export const MENU_ITEMS: MenuItemType[] = [
     category: 'desserts',
     price: '200 ₽',
     image: '/images/hero/menu-dessert-apple-pie.png',
+    featured: true,
   },
   {
     id: 'brownie',
