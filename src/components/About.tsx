@@ -39,22 +39,25 @@ export default function About() {
               О НАС
             </h2>
 
-            <div className="font-sans text-base sm:text-lg text-[#111111]/85 space-y-4 font-medium leading-relaxed max-w-md">
-              <p>
-                <strong>MEDEO</strong> — маленькая кофейня с большой любовью.
+            <div className="font-sans text-sm sm:text-base text-[#111111]/85 space-y-4 font-normal leading-relaxed max-w-lg">
+              <p className="font-semibold text-base sm:text-lg text-[#111111]">
+                Привет! Я Дмитрий, основатель MEDEO.
               </p>
               <p>
-                Мы варим кофе, готовим хот-доги и создаём десерты, чтобы вы улыбались каждый день.
+                Когда-то всё началось с простой идеи — создать небольшую, уютную кофейню, куда хочется возвращаться, куда приятно забежать не только за хорошим кофе, но и просто за настроением. Здесь можно немного выдохнуть, поболтать, выпить любимый напиток, попробовать сочный хот-дог или что-нибудь сладкое — и всё это по очень дружелюбным ценам.
               </p>
               <p>
-                Спасибо, что вы с нами.
+                Мы ещё маленькие, но постепенно растём, пробуем новое и становимся лучше. И для нас действительно важен каждый человек, который открывает нашу дверь. Именно благодаря вам у MEDEO появляется своя история и своя атмосфера.
+              </p>
+              <p>
+                Приходите в гости — будем рады познакомиться, накормить, напоить кофе и просто поболтать. Ждём вас!
               </p>
             </div>
 
-            {/* HANDWRITTEN CURSIVE ACCENT */}
-            <div className="mt-8">
-              <span className="font-serif italic text-2xl sm:text-3xl font-bold text-[#FFC700] drop-shadow-xs">
-                Команда MEDEO
+            {/* SIGNATURE ACCENT */}
+            <div className="mt-6">
+              <span className="font-serif italic text-xl sm:text-2xl font-bold text-[#111111] tracking-tight">
+                Дмитрий и команда MEDEO
               </span>
             </div>
           </motion.div>
