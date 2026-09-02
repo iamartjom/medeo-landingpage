@@ -22,9 +22,10 @@ export default function YandexDelivery() {
               <span className="text-[#FFC700]">ЯНДЕКС</span>
             </h2>
 
-            <p className="font-sans text-base sm:text-lg text-[#FAF8F5]/80 max-w-md leading-relaxed mb-8 font-medium">
-              Быстро, удобно и горячо. <br />
-              Ваш любимый MEDEO приедет прямо к вам.
+            <p className="font-sans text-base sm:text-lg text-[#FAF8F5]/85 max-w-lg leading-relaxed mb-8 font-medium">
+              Хочется в MEDEO, но нет времени приехать? <br />
+              Пусть MEDEO приедет к вам — в офис, домой или куда удобно. <br />
+              Просто оформите заказ через доставку.
             </p>
 
             <div>
