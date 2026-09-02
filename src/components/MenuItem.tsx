@@ -64,8 +64,8 @@ export default function MenuItem({ item }: MenuItemProps) {
         </div>
 
         {/* TITLE & DESCRIPTOR */}
-        <div className="mb-3 text-center min-h-[52px] sm:min-h-[58px] flex flex-col justify-center items-center">
-          <h3 className="font-display font-black text-xl md:text-2xl text-[#111111] tracking-tight leading-tight text-center">
+        <div className="mb-3 text-center min-h-[48px] sm:min-h-[54px] flex flex-col justify-center items-center">
+          <h3 className="font-display font-black text-sm sm:text-base md:text-lg text-[#111111] tracking-tight leading-snug text-center px-1">
             {item.name}
           </h3>
           {item.description && (
@@ -90,21 +90,16 @@ export default function MenuItem({ item }: MenuItemProps) {
             ))}
           </div>
         )}
-      </div>
 
-      {/* SINGLE PRICE (FOR HOTDOGS / DESSERTS) */}
-      {!item.prices && (
-        <div className="pt-3 border-t border-[#111111]/5 flex items-baseline justify-between mt-2">
-          <span className="font-display text-base font-black text-[#111111]">
-            {item.price}
-          </span>
-          {item.weight && (
-            <span className="font-sans text-xs font-medium text-[#111111]/50">
-              {item.weight}
+        {/* SINGLE PRICE PILL CONTAINER (HOTDOGS & DESSERTS) */}
+        {!item.prices && (
+          <div className="mb-2 flex items-center justify-center bg-[#FAF8F5] py-2.5 px-3.5 rounded-2xl border border-[#111111]/4">
+            <span className="font-display text-xs sm:text-sm font-black text-[#111111] tracking-wide">
+              {item.price}
             </span>
-          )}
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </motion.div>
   );
 }
