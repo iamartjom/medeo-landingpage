@@ -31,7 +31,7 @@ export default function YandexDelivery() {
 
             <div>
               <a
-                href="https://eda.yandex.ru"
+                href="https://eda.yandex.ru/r/medeo_coffee_eats_restaurant?is_ad=true&placeSlug=medeo_coffee_eats"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#FFC700] text-[#111111] font-display text-xs md:text-sm font-black tracking-wider uppercase hover:bg-[#FAF8F5] transition-all duration-300 shadow-lg active:scale-95"
