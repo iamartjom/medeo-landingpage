@@ -56,12 +56,12 @@ export default function MenuItem({ item }: MenuItemProps) {
         </div>
 
         {/* TITLE & DESCRIPTOR */}
-        <div className="mb-3 text-center min-h-[48px] sm:min-h-[54px] flex flex-col justify-center">
-          <h3 className="font-display font-black text-xl md:text-2xl text-[#111111] tracking-tight leading-none">
+        <div className="mb-3 text-center min-h-[52px] sm:min-h-[58px] flex flex-col justify-center items-center">
+          <h3 className="font-display font-black text-xl md:text-2xl text-[#111111] tracking-tight leading-tight text-center">
             {item.name}
           </h3>
           {item.description && (
-            <p className="font-sans text-xs sm:text-sm font-semibold text-[#111111]/70 mt-1 tracking-normal">
+            <p className="font-sans text-xs sm:text-sm font-semibold text-[#111111]/70 mt-1 tracking-normal text-center">
               {item.description}
             </p>
           )}

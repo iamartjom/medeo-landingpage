@@ -291,12 +291,15 @@ export const MENU_ITEMS: MenuItemType[] = [
   },
   {
     id: 'caramel-tarts',
-    name: 'Тарталетки с карамелью',
+    name: 'Тарталетка',
+    description: 'с карамелью',
     category: 'autumn',
-    weight: '180 г',
     price: '190 ₽',
     image: '/images/hero/hero-caramel-tarts.png',
     badge: 'СЕЗОННОЕ',
+    prices: [
+      { volume: '1 шт', price: '190 ₽' },
+    ],
   },
   {
     id: 'caramel-apple-pie',
