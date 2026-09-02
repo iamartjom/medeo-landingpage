@@ -6,7 +6,7 @@ import MenuItem from "./MenuItem";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function MenuSection() {
-  const [activeCategory, setActiveCategory] = useState<string>("drinks");
+  const [activeCategory, setActiveCategory] = useState<string>("hotdogs");
   const [showAll, setShowAll] = useState<boolean>(false);
 
   const categoryItems = MENU_ITEMS.filter((item) => item.category === activeCategory);

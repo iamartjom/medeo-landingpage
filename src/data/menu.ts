@@ -23,8 +23,8 @@ export interface CategoryType {
 }
 
 export const CATEGORIES: CategoryType[] = [
-  { id: 'drinks', name: 'Напитки', label: 'Авторский и классический кофе' },
   { id: 'hotdogs', name: 'Хот-доги', label: 'Горячие street-food доги' },
+  { id: 'drinks', name: 'Напитки', label: 'Авторский и классический кофе' },
   { id: 'desserts', name: 'Десерты', label: 'Свежая выпечка и торты' },
   { id: 'autumn', name: 'Сезонное меню', label: 'Сезонный спешел' },
 ];
