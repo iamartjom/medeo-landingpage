@@ -17,6 +17,19 @@ export default function YandexDelivery() {
             transition={{ duration: 0.8 }}
             className="md:col-span-6 flex flex-col justify-center"
           >
+            {/* YANDEX EATS BRAND ICON */}
+            <div className="mb-4">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl overflow-hidden shadow-lg border border-[#FFC700]/30">
+                <Image
+                  src="/images/yandex-eats-badge.png"
+                  alt="Яндекс Еда"
+                  fill
+                  unoptimized
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black text-[#FAF8F5] tracking-tighter uppercase leading-[0.95] mb-6">
               ДОСТАВКА <br />
               <span className="text-[#FFC700]">ЯНДЕКС</span>
