@@ -7,8 +7,16 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function MenuSection() {
   const [activeCategory, setActiveCategory] = useState<string>("drinks");
+  const [showAll, setShowAll] = useState<boolean>(false);
 
-  const filteredItems = MENU_ITEMS.filter((item) => item.category === activeCategory);
+  const categoryItems = MENU_ITEMS.filter((item) => item.category === activeCategory);
+  const visibleItems = showAll ? categoryItems : categoryItems.slice(0, 5);
+  const hasMoreItems = categoryItems.length > 5;
+
+  const handleCategoryChange = (catId: string) => {
+    setActiveCategory(catId);
+    setShowAll(false);
+  };
 
   return (
     <section id="menu" className="w-full bg-[#FAF8F5] text-[#111111] py-16 md:py-24 bg-grain">
@@ -27,7 +35,7 @@ export default function MenuSection() {
               return (
                 <button
                   key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
+                  onClick={() => handleCategoryChange(cat.id)}
                   className={`px-5 py-2 rounded-full font-display text-xs md:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer flex-shrink-0 ${
                     isActive
                       ? "bg-[#FFC700] text-[#111111] shadow-sm"
@@ -41,31 +49,33 @@ export default function MenuSection() {
           </div>
         </div>
 
-        {/* PRODUCT CAROUSEL / GRID (4-5 VISIBLE PRODUCTS) */}
+        {/* PRODUCT GRID (INITIAL 5 OR EXPANDED FULL MENU) */}
         <AnimatePresence mode="wait">
           <motion.div
-            key={activeCategory}
+            key={activeCategory + (showAll ? "-all" : "-preview")}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.35 }}
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 my-8"
           >
-            {filteredItems.map((item) => (
+            {visibleItems.map((item) => (
               <MenuItem key={item.id} item={item} />
             ))}
           </motion.div>
         </AnimatePresence>
 
-        {/* CENTERED YELLOW BUTTON: СМОТРЕТЬ ВСЁ МЕНЮ */}
-        <div className="flex justify-center mt-10">
-          <a
-            href="#menu"
-            className="px-8 py-3.5 rounded-full bg-[#FFC700] text-[#111111] font-display text-xs md:text-sm font-black tracking-wider uppercase hover:bg-[#111111] hover:text-[#FFC700] transition-all duration-300 shadow-md active:scale-95"
-          >
-            СМОТРЕТЬ ВСЁ МЕНЮ
-          </a>
-        </div>
+        {/* CENTERED YELLOW BUTTON: СМОТРЕТЬ ВСЁ МЕНЮ / СВЕРНУТЬ */}
+        {hasMoreItems && (
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-3.5 rounded-full bg-[#FFC700] text-[#111111] font-display text-xs md:text-sm font-black tracking-wider uppercase hover:bg-[#111111] hover:text-[#FFC700] transition-all duration-300 shadow-md active:scale-95 cursor-pointer"
+            >
+              {showAll ? "СВЕРНУТЬ" : "СМОТРЕТЬ ВСЁ МЕНЮ"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

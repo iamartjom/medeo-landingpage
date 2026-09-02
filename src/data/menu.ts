@@ -98,6 +98,30 @@ export const MENU_ITEMS: MenuItemType[] = [
       { volume: '450 мл', price: '220 ₽' },
     ],
   },
+  {
+    id: 'bumble',
+    name: 'Бамбл кофе',
+    category: 'drinks',
+    weight: '350 / 600 мл',
+    price: 'от 413 ₽',
+    image: '/images/hero/menu-bumble.png',
+    prices: [
+      { volume: '350 мл', price: '413 ₽' },
+      { volume: '600 мл', price: '449 ₽' },
+    ],
+  },
+  {
+    id: 'bumble-grapefruit',
+    name: 'Бамбл кофе на грейпфруте',
+    category: 'drinks',
+    weight: '350 / 600 мл',
+    price: 'от 479 ₽',
+    image: '/images/hero/menu-bumble-grapefruit.png',
+    prices: [
+      { volume: '350 мл', price: '479 ₽' },
+      { volume: '600 мл', price: '511 ₽' },
+    ],
+  },
 
   // ХОТ-ДОГИ
   {
