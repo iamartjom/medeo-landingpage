@@ -178,6 +178,7 @@ export const MENU_ITEMS: MenuItemType[] = [
     name: 'Мексиканский дог',
     category: 'hotdogs',
     price: '195 ₽',
+    badge: 'ПИКАНТНЫЙ',
     image: '/images/hotdogs/menu-mexican-dog.png',
     featured: true,
   },
