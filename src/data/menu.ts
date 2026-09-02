@@ -112,7 +112,8 @@ export const MENU_ITEMS: MenuItemType[] = [
   },
   {
     id: 'bumble-grapefruit',
-    name: 'Бамбл кофе на грейпфруте',
+    name: 'Бамбл кофе',
+    description: 'на грейпфруте',
     category: 'drinks',
     weight: '350 / 600 мл',
     price: 'от 479 ₽',

@@ -44,20 +44,27 @@ export default function MenuItem({ item }: MenuItemProps) {
           </motion.div>
         </div>
 
-        {/* TITLE */}
-        <h3 className="font-display font-black text-xl md:text-2xl text-[#111111] tracking-tight mb-3 text-center">
-          {item.name}
-        </h3>
+        {/* TITLE & DESCRIPTOR */}
+        <div className="mb-3 text-center min-h-[48px] sm:min-h-[54px] flex flex-col justify-center">
+          <h3 className="font-display font-black text-xl md:text-2xl text-[#111111] tracking-tight leading-none">
+            {item.name}
+          </h3>
+          {item.description && (
+            <p className="font-sans text-xs sm:text-sm font-semibold text-[#111111]/70 mt-1 tracking-normal">
+              {item.description}
+            </p>
+          )}
+        </div>
 
-        {/* DETAILED PRICE / VOLUME PILL CONTAINER (EXACT CARD LAYOUT) */}
+        {/* DETAILED PRICE / VOLUME TABLE (COLUMN-ALIGNED) */}
         {item.prices && item.prices.length > 0 && (
           <div className="mb-2 flex flex-col gap-2 bg-[#FAF8F5] p-3.5 rounded-2xl border border-[#111111]/4">
             {item.prices.map((p) => (
-              <div key={p.volume} className="flex items-center justify-between">
-                <span className="font-display text-xs sm:text-sm font-semibold text-[#111111]/60">
+              <div key={p.volume} className="grid grid-cols-2 items-center">
+                <span className="font-display text-xs sm:text-sm font-semibold text-[#111111]/60 text-left">
                   {p.volume}
                 </span>
-                <span className="font-display text-xs sm:text-sm font-black text-[#111111]">
+                <span className="font-display text-xs sm:text-sm font-black text-[#111111] tabular-nums text-right">
                   {p.price}
                 </span>
               </div>
