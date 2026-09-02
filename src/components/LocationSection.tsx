@@ -122,7 +122,7 @@ export default function LocationSection() {
             {/* BLACK PILL BUTTON: МЫ НА КАРТЕ */}
             <div className="pt-4">
               <a
-                href="https://yandex.ru/maps"
+                href="https://yandex.ru/maps/-/CTXAuY8F"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-4 bg-[#111111] text-[#FFC700] font-display text-xs font-black tracking-wider uppercase rounded-full flex items-center justify-center gap-2 hover:bg-[#FAF8F5] hover:text-[#111111] transition-all shadow-lg active:scale-95"

@@ -99,8 +99,9 @@ export default function Hero() {
           <div className="flex flex-wrap items-center justify-start gap-3 mt-1 sm:mt-2 lg:mt-0">
             {/* PRIMARY BLACK BUTTON */}
             <a
-              href="#location"
-              onClick={(e) => scrollToSection(e, "#location")}
+              href="https://yandex.ru/maps/-/CTXAuY8F"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-display text-xs md:text-sm font-black tracking-wider bg-[#111111] text-[#FFC700] hover:bg-[#FAF8F5] hover:text-[#111111] transition-all duration-300 shadow-md active:scale-95 uppercase"
             >
               <MapPin className="w-4 h-4 fill-[#FFC700]" />
@@ -109,8 +110,9 @@ export default function Hero() {
 
             {/* SECONDARY OUTLINE BUTTON */}
             <a
-              href="#delivery"
-              onClick={(e) => scrollToSection(e, "#delivery")}
+              href="https://eda.yandex.ru/r/medeo_coffee_eats_restaurant?is_ad=true&placeSlug=medeo_coffee_eats"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-display text-xs md:text-sm font-bold tracking-wider border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-[#FFC700] transition-all duration-300 active:scale-95 uppercase"
             >
               <span>ДОСТАВКА ЯНДЕКС</span>
