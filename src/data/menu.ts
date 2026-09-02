@@ -123,6 +123,33 @@ export const MENU_ITEMS: MenuItemType[] = [
       { volume: '600 мл', price: '511 ₽' },
     ],
   },
+  {
+    id: 'tea',
+    name: 'Чай в ассортименте',
+    category: 'drinks',
+    weight: '250 / 350 / 450 мл',
+    price: 'от 95 ₽',
+    image: '/images/hero/menu-tea.png',
+    prices: [
+      { volume: '250 мл', price: '95 ₽' },
+      { volume: '350 мл', price: '150 ₽' },
+      { volume: '450 мл', price: '185 ₽' },
+    ],
+  },
+  {
+    id: 'cacao',
+    name: 'Какао',
+    description: 'без сахара',
+    category: 'drinks',
+    weight: '250 / 350 / 450 мл',
+    price: 'от 115 ₽',
+    image: '/images/hero/menu-cacao.png',
+    prices: [
+      { volume: '250 мл', price: '115 ₽' },
+      { volume: '350 мл', price: '160 ₽' },
+      { volume: '450 мл', price: '205 ₽' },
+    ],
+  },
 
   // ХОТ-ДОГИ
   {
