@@ -33,10 +33,14 @@ export default function MenuItem({ item }: MenuItemProps) {
                     ? "bg-[#9A1231] text-white"
                     : item.badge === "ТОП ПРОДАЖ"
                     ? "bg-[#C44E0E] text-white"
+                    : item.badge === "ХИТ ОСЕНИ"
+                    ? "bg-[#D45D18] text-white"
                     : "bg-[#FFC700] text-[#111111]"
                 }`}
               >
-                {(item.badge === "ХИТ СЕЗОНА" || item.badge === "ТОП ПРОДАЖ") && (
+                {(item.badge === "ХИТ СЕЗОНА" ||
+                  item.badge === "ТОП ПРОДАЖ" ||
+                  item.badge === "ХИТ ОСЕНИ") && (
                   <span className="text-[10px]">★</span>
                 )}
                 {item.badge}

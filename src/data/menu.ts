@@ -290,6 +290,7 @@ export const MENU_ITEMS: MenuItemType[] = [
     description: 'с карамелью, орехами и корицей',
     category: 'desserts',
     price: '215 ₽',
+    badge: 'ХИТ ОСЕНИ',
     image: '/images/hero/menu-dessert-sinocake-pecan.png',
     featured: true,
   },
@@ -299,6 +300,7 @@ export const MENU_ITEMS: MenuItemType[] = [
     description: 'яблочно-карамельный',
     category: 'desserts',
     price: '235 ₽',
+    badge: 'ХИТ ОСЕНИ',
     image: '/images/hero/menu-dessert-apple-caramel-cheesecake.png',
   },
   {
@@ -314,6 +316,7 @@ export const MENU_ITEMS: MenuItemType[] = [
     description: 'карамельно-яблочный',
     category: 'desserts',
     price: '185 ₽',
+    badge: 'ХИТ ОСЕНИ',
     image: '/images/hero/menu-dessert-apple-caramel-pie.png',
   },
   {
