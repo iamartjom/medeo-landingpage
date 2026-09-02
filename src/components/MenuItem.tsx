@@ -20,7 +20,11 @@ export default function MenuItem({ item }: MenuItemProps) {
     >
       <div>
         {/* PRODUCT IMAGE CONTAINER */}
-        <div className="relative w-full aspect-square mb-5 overflow-hidden rounded-2xl bg-[#FAF8F5]/60 flex items-center justify-center p-4">
+        <div
+          className={`relative w-full aspect-square mb-5 overflow-hidden rounded-2xl bg-[#FAF8F5]/60 flex items-center justify-center ${
+            item.category === "hotdogs" ? "p-0" : "p-4"
+          }`}
+        >
           {item.badge && (
             <div className="absolute top-3 left-3 z-10">
               <span
@@ -41,7 +45,7 @@ export default function MenuItem({ item }: MenuItemProps) {
           )}
 
           <motion.div
-            whileHover={{ scale: 1.08, y: -4 }}
+            whileHover={{ scale: 1.06 }}
             transition={{ duration: 0.3 }}
             className="relative w-full h-full"
           >
@@ -50,7 +54,11 @@ export default function MenuItem({ item }: MenuItemProps) {
               alt={item.name}
               fill
               unoptimized
-              className="object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.08)]"
+              className={
+                item.category === "hotdogs"
+                  ? "object-cover rounded-2xl"
+                  : "object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.08)]"
+              }
             />
           </motion.div>
         </div>
