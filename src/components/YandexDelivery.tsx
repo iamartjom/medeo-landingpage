@@ -24,8 +24,9 @@ export default function YandexDelivery() {
 
             <p className="font-sans text-base sm:text-lg text-[#FAF8F5]/85 max-w-lg leading-relaxed mb-8 font-medium">
               Хочется в MEDEO, но нет времени приехать? <br />
-              Пусть MEDEO приедет к вам — в офис, домой или куда удобно. <br />
-              Просто оформите заказ через доставку.
+              Пусть MEDEO приедет к вам — в офис, домой <br />
+              или куда удобно. <br />
+              Просто оформите заказ через «Яндекс Еда»
             </p>
 
             <div>
