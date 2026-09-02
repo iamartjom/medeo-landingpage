@@ -344,7 +344,8 @@ export const MENU_ITEMS: MenuItemType[] = [
   },
   {
     id: 'salted-caramel-latte',
-    name: 'Латте соленая карамель',
+    name: 'Латте',
+    description: 'соленая карамель',
     category: 'autumn',
     badge: 'ТОП ПРОДАЖ',
     weight: '300 / 400 мл',
