@@ -125,7 +125,8 @@ export const MENU_ITEMS: MenuItemType[] = [
   },
   {
     id: 'tea',
-    name: 'Чай в ассортименте',
+    name: 'Чай',
+    description: 'в ассортименте',
     category: 'drinks',
     weight: '250 / 350 / 450 мл',
     price: 'от 95 ₽',
