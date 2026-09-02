@@ -8,31 +8,29 @@ export interface PopularItem {
   id: string;
   name: string;
   price: string;
-  weight: string;
   image: string;
+  isCover?: boolean;
 }
 
 const POPULAR_ITEMS: PopularItem[] = [
   {
-    id: "pop-1",
+    id: "pop-greek-dog",
+    name: "Греческий дог",
+    price: "229 ₽",
+    image: "/images/hotdogs/menu-greek-dog.png",
+    isCover: true,
+  },
+  {
+    id: "pop-pecan-cheesecake",
     name: "Чизкейк с пеканом",
-    price: "220 ₽",
-    weight: "180 г",
-    image: "/images/hero/medeo-dessert-cheesecake.png",
+    price: "199 ₽",
+    image: "/images/hero/menu-dessert-choco-pecan-cheesecake.png",
   },
   {
-    id: "pop-2",
-    name: "Классический",
-    price: "220 ₽",
-    weight: "210 г",
-    image: "/images/hero/hero-greek-hotdog.png",
-  },
-  {
-    id: "pop-3",
-    name: "Брауни",
-    price: "180 ₽",
-    weight: "135 г",
-    image: "/images/hero/hero-brownie-stack.png",
+    id: "pop-salted-caramel-latte",
+    name: "Латте соленая карамель",
+    price: "от 189 ₽",
+    image: "/images/hero/menu-salted-caramel-latte.png",
   },
 ];
 
@@ -73,12 +71,12 @@ export default function PopularSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="group bg-[#FFFFFF] p-4 rounded-2xl border border-[#111111]/5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                className="group bg-[#FFFFFF] p-5 rounded-3xl border border-[#111111]/5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="relative w-full aspect-[4/3] mb-4 overflow-hidden rounded-xl bg-[#FAF8F5]/60 flex items-center justify-center p-2">
+                  <div className={`relative w-full aspect-square mb-4 overflow-hidden rounded-2xl bg-[#FAF8F5]/60 flex items-center justify-center ${item.isCover ? 'p-0' : 'p-4'}`}>
                     <motion.div
-                      whileHover={{ scale: 1.04 }}
+                      whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                       className="relative w-full h-full"
                     >
@@ -86,22 +84,20 @@ export default function PopularSection() {
                         src={item.image}
                         alt={item.name}
                         fill
-                        className="object-contain drop-shadow-sm"
+                        unoptimized
+                        className={item.isCover ? "object-cover rounded-2xl" : "object-contain drop-shadow-sm"}
                       />
                     </motion.div>
                   </div>
 
-                  <h3 className="font-display font-black text-lg text-[#111111] mb-1">
+                  <h3 className="font-display font-black text-lg md:text-xl text-[#111111] text-center mb-2 tracking-tight">
                     {item.name}
                   </h3>
                 </div>
 
-                <div className="pt-2 flex items-baseline justify-between border-t border-[#111111]/5 mt-2">
-                  <span className="font-display text-base font-black text-[#111111]">
+                <div className="flex items-center justify-center bg-[#FAF8F5] py-2.5 px-3.5 rounded-2xl border border-[#111111]/4 mt-2">
+                  <span className="font-display text-sm sm:text-base font-black text-[#111111]">
                     {item.price}
-                  </span>
-                  <span className="font-sans text-xs font-medium text-[#111111]/50">
-                    {item.weight}
                   </span>
                 </div>
               </motion.div>
