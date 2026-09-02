@@ -164,6 +164,18 @@ export const MENU_ITEMS: MenuItemType[] = [
       { volume: '450 мл', price: '205 ₽' },
     ],
   },
+  {
+    id: 'lemonades',
+    name: 'Лимонады',
+    description: 'в ассортименте',
+    category: 'drinks',
+    weight: '450 мл',
+    price: '210 ₽',
+    image: '/images/hero/menu-lemonades.png',
+    prices: [
+      { volume: '450 мл', price: '210 ₽' },
+    ],
+  },
 
   // ХОТ-ДОГИ
   {
