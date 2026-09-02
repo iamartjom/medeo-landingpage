@@ -17,12 +17,13 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="md:col-span-6 relative"
           >
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:h-[540px] rounded-3xl overflow-hidden shadow-2xl border border-[#111111]/5">
               <Image
                 src="/images/barista-about.jpg"
-                alt="MEDEO Coffee Barista"
+                alt="Дмитрий, основатель MEDEO"
                 fill
-                className="object-cover"
+                unoptimized
+                className="object-cover object-top"
               />
             </div>
           </motion.div>
