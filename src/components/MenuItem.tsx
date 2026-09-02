@@ -22,13 +22,13 @@ export default function MenuItem({ item }: MenuItemProps) {
         {/* PRODUCT IMAGE CONTAINER */}
         <div
           className={`relative w-full aspect-square mb-5 overflow-hidden rounded-2xl bg-[#FAF8F5]/60 flex items-center justify-center ${
-            item.category === "hotdogs" ? "p-0" : "p-4"
+            item.category === "hotdogs" ? "p-0" : "p-3 pt-6 pb-2"
           }`}
         >
           {item.badge && (
-            <div className="absolute top-3 left-3 z-10">
+            <div className="absolute top-2 left-2.5 z-10">
               <span
-                className={`px-3 py-1 rounded-full font-display text-[9px] font-black tracking-wider uppercase shadow-sm flex items-center gap-1 ${
+                className={`px-2.5 py-0.5 rounded-full font-display text-[9px] font-black tracking-wider uppercase shadow-sm flex items-center gap-1 ${
                   item.badge === "ХИТ СЕЗОНА"
                     ? "bg-[#9A1231] text-white"
                     : item.badge === "ТОП ПРОДАЖ"
