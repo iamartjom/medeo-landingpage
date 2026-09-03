@@ -6,6 +6,7 @@ import PopularSection from "@/components/PopularSection";
 import About from "@/components/About";
 import LocationSection from "@/components/LocationSection";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <LocationSection />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 }

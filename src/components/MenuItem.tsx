@@ -16,19 +16,19 @@ export default function MenuItem({ item }: MenuItemProps) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      className="group bg-[#FFFFFF] p-5 sm:p-6 rounded-[28px] border border-[#111111]/6 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between"
+      className="group bg-[#FFFFFF] p-3.5 sm:p-5 md:p-6 rounded-[22px] sm:rounded-[28px] border border-[#111111]/6 shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col justify-between"
     >
       <div>
         {/* PRODUCT IMAGE CONTAINER */}
         <div
-          className={`relative w-full aspect-square mb-5 overflow-hidden rounded-2xl bg-[#FAF8F5]/60 flex items-center justify-center ${
-            item.category === "hotdogs" ? "p-0" : "p-3 pt-6 pb-2"
+          className={`relative w-full aspect-square mb-3 sm:mb-5 overflow-hidden rounded-2xl bg-[#FAF8F5]/60 flex items-center justify-center ${
+            item.category === "hotdogs" ? "p-0" : "p-2 sm:p-3 pt-4 sm:pt-6 pb-2"
           }`}
         >
           {item.badge && (
-            <div className="absolute top-2 left-2.5 z-10">
+            <div className="absolute top-2 left-2 z-10">
               <span
-                className={`px-2.5 py-0.5 rounded-full font-display text-[9px] font-black tracking-wider uppercase shadow-sm flex items-center gap-1 ${
+                className={`px-2 sm:px-2.5 py-0.5 rounded-full font-display text-[8.5px] sm:text-[9px] font-black tracking-wider uppercase shadow-sm flex items-center gap-1 ${
                   item.badge === "ХИТ СЕЗОНА"
                     ? "bg-[#9A1231] text-white"
                     : item.badge === "ТОП ПРОДАЖ"
@@ -43,10 +43,10 @@ export default function MenuItem({ item }: MenuItemProps) {
                 {(item.badge === "ХИТ СЕЗОНА" ||
                   item.badge === "ТОП ПРОДАЖ" ||
                   item.badge === "ХИТ ОСЕНИ") && (
-                  <span className="text-[10px]">★</span>
+                  <span className="text-[9px] sm:text-[10px]">★</span>
                 )}
                 {item.badge === "ПИКАНТНЫЙ" && (
-                  <span className="text-[11px] leading-none">🌶</span>
+                  <span className="text-[10px] sm:text-[11px] leading-none">🌶</span>
                 )}
                 {item.badge}
               </span>
@@ -73,12 +73,12 @@ export default function MenuItem({ item }: MenuItemProps) {
         </div>
 
         {/* TITLE & DESCRIPTOR */}
-        <div className="mb-3 text-center min-h-[48px] sm:min-h-[54px] flex flex-col justify-center items-center">
-          <h3 className="font-display font-black text-sm sm:text-base md:text-lg text-[#111111] tracking-tight leading-snug text-center px-1">
+        <div className="mb-2 sm:mb-3 text-center min-h-[40px] sm:min-h-[54px] flex flex-col justify-center items-center">
+          <h3 className="font-display font-black text-xs sm:text-base md:text-lg text-[#111111] tracking-tight leading-snug text-center px-0.5 sm:px-1">
             {item.name}
           </h3>
           {item.description && (
-            <p className="font-sans text-xs sm:text-sm font-semibold text-[#111111]/70 mt-1 tracking-normal text-center">
+            <p className="font-sans text-[11px] sm:text-sm font-semibold text-[#111111]/70 mt-0.5 sm:mt-1 tracking-normal text-center">
               {item.description}
             </p>
           )}
@@ -86,13 +86,13 @@ export default function MenuItem({ item }: MenuItemProps) {
 
         {/* DETAILED PRICE / VOLUME TABLE (COLUMN-ALIGNED) */}
         {item.prices && item.prices.length > 0 && (
-          <div className="mb-2 flex flex-col gap-2 bg-[#FAF8F5] p-3.5 rounded-2xl border border-[#111111]/4">
+          <div className="mb-1 sm:mb-2 flex flex-col gap-1.5 sm:gap-2 bg-[#FAF8F5] p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border border-[#111111]/4">
             {item.prices.map((p) => (
               <div key={p.volume} className="grid grid-cols-2 items-center">
-                <span className="font-display text-xs sm:text-sm font-semibold text-[#111111]/60 text-left">
+                <span className="font-display text-[11px] sm:text-sm font-semibold text-[#111111]/60 text-left">
                   {p.volume}
                 </span>
-                <span className="font-display text-xs sm:text-sm font-black text-[#111111] tabular-nums text-right">
+                <span className="font-display text-[11px] sm:text-sm font-black text-[#111111] tabular-nums text-right">
                   {p.price}
                 </span>
               </div>
@@ -102,7 +102,7 @@ export default function MenuItem({ item }: MenuItemProps) {
 
         {/* SINGLE PRICE PILL CONTAINER (HOTDOGS & DESSERTS) */}
         {!item.prices && (
-          <div className="mb-2 flex items-center justify-center bg-[#FAF8F5] py-2.5 px-3.5 rounded-2xl border border-[#111111]/4">
+          <div className="mb-1 sm:mb-2 flex items-center justify-center bg-[#FAF8F5] py-2 sm:py-2.5 px-3 sm:px-3.5 rounded-xl sm:rounded-2xl border border-[#111111]/4">
             <span className="font-display text-xs sm:text-sm font-black text-[#111111] tracking-wide">
               {item.price}
             </span>

@@ -73,10 +73,10 @@ export default function Hero() {
         </div>
 
         {/* HERO TEXT & CTA CONTENT - SECOND ON MOBILE (order-2), FIRST ON DESKTOP (lg:order-1) */}
-        <div className="order-2 lg:order-1 lg:col-span-6 xl:col-span-6 flex flex-col justify-center text-left items-start pt-2 sm:pt-4 lg:pt-0 pb-2 lg:pb-0">
+        <div className="order-2 lg:order-1 lg:col-span-6 xl:col-span-6 flex flex-col justify-center items-center lg:items-start text-center lg:text-left pt-2 sm:pt-4 lg:pt-0 pb-2 lg:pb-0 w-full">
           
           {/* MAIN HEADLINE */}
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#111111] uppercase leading-[0.95] mb-4 sm:mb-5 lg:mb-6 text-left">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#111111] uppercase leading-[0.98] mb-5 lg:mb-6 text-center lg:text-left">
             ХОРОШИЙ ДЕНЬ <br />
             НАЧИНАЕТСЯ <br />
             С MEDEO
@@ -96,13 +96,13 @@ export default function Hero() {
           </div>
 
           {/* CTA BUTTONS */}
-          <div className="flex flex-wrap items-center justify-start gap-3 mt-1 sm:mt-2 lg:mt-0">
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 w-full sm:w-auto max-w-xs sm:max-w-none mt-1 sm:mt-2 lg:mt-0">
             {/* PRIMARY BLACK BUTTON */}
             <a
-              href="https://yandex.ru/maps/-/CTXAuY8F"
+              href="https://yandex.com/maps/org/medeo_coffee/223897580868/?indoorLevel=1&ll=37.660916%2C55.754669&utm_source=share&z=16"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-display text-xs md:text-sm font-black tracking-wider bg-[#111111] text-[#FFC700] hover:bg-[#FAF8F5] hover:text-[#111111] transition-all duration-300 shadow-md active:scale-95 uppercase"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 sm:px-6 py-3.5 sm:py-3 rounded-full font-display text-xs md:text-sm font-black tracking-wider bg-[#111111] text-[#FFC700] hover:bg-[#FAF8F5] hover:text-[#111111] transition-all duration-300 shadow-md active:scale-95 uppercase"
             >
               <MapPin className="w-4 h-4 fill-[#FFC700]" />
               <span>МЫ НА КАРТЕ</span>
@@ -113,7 +113,7 @@ export default function Hero() {
               href="https://eda.yandex.ru/r/medeo_coffee_eats_restaurant?is_ad=true&placeSlug=medeo_coffee_eats"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-display text-xs md:text-sm font-bold tracking-wider border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-[#FFC700] transition-all duration-300 active:scale-95 uppercase"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 sm:px-6 py-3.5 sm:py-3 rounded-full font-display text-xs md:text-sm font-black tracking-wider border-2 border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-[#FFC700] transition-all duration-300 active:scale-95 uppercase"
             >
               <span>ДОСТАВКА ЯНДЕКС</span>
             </a>

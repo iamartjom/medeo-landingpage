@@ -82,7 +82,7 @@ export default function Header() {
         <div className="hidden md:flex items-center space-x-4 pl-6 border-l border-[#111111]">
           <div className="font-sans text-[11px] md:text-xs font-bold text-[#111111] leading-tight">
             <p className="font-extrabold mb-0.5">Режим работы:</p>
-            <p className="opacity-90">Будни: 8:00 – 21:00</p>
+            <p className="opacity-90">Будни: 08:00 – 21:00</p>
             <p className="opacity-90">Выходные: 10:00 – 20:00</p>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function Header() {
               ))}
               <div className="pt-3 border-t border-[#111111]/20 font-sans text-xs font-bold text-[#111111]">
                 <p className="font-extrabold mb-1">Режим работы:</p>
-                <p>Будни: 8:00 – 21:00</p>
+                <p>Будни: 08:00 – 21:00</p>
                 <p>Выходные: 10:00 – 20:00</p>
               </div>
             </div>

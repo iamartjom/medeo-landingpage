@@ -76,3 +76,15 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Hide Next.js Development Indicator Badge (Letter N) */
+nextjs-portal,
+[data-nextjs-dev-tools-button],
+[data-nextjs-toast],
+#nextjs-dev-overlay {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+

@@ -45,15 +45,15 @@ export default function About() {
             </div>
 
             {/* MAPS BUTTON */}
-            <div className="mt-6">
+            <div className="mt-6 flex justify-center lg:justify-start">
               <a
-                href="https://yandex.ru/maps/-/CTXAuY8F"
+                href="https://yandex.com/maps/org/medeo_coffee/223897580868/?indoorLevel=1&ll=37.660916%2C55.754669&utm_source=share&z=16"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#111111] text-[#FAF8F5] font-display text-xs md:text-sm font-black tracking-wider uppercase hover:bg-[#FFC700] hover:text-[#111111] transition-all duration-300 shadow-md active:scale-95"
+                className="group w-full sm:w-auto max-w-xs sm:max-w-none flex items-center justify-center gap-2 px-6 py-3.5 sm:py-3 rounded-full bg-[#111111] text-[#FAF8F5] font-display text-xs md:text-sm font-black tracking-wider uppercase hover:bg-[#FFC700] hover:text-[#111111] transition-all duration-300 shadow-md active:scale-95 text-center"
               >
                 <MapPin className="w-4 h-4 text-[#FFC700] group-hover:text-[#111111] transition-colors" />
-                МЫ НА КАРТАХ
+                <span>МЫ НА КАРТАХ</span>
               </a>
             </div>
           </motion.div>

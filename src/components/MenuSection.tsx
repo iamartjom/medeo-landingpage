@@ -28,18 +28,18 @@ export default function MenuSection() {
             МЕНЮ
           </h2>
 
-          {/* CATEGORY FILTER TABS */}
-          <div className="flex items-center justify-center space-x-2 md:space-x-3 overflow-x-auto no-scrollbar py-2 mt-6">
+          {/* CATEGORY FILTER TABS: 2x2 GRID ON MOBILE, SINGLE ROW ON DESKTOP */}
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center gap-2 sm:gap-3 max-w-sm sm:max-w-none mx-auto mt-6">
             {CATEGORIES.map((cat) => {
               const isActive = activeCategory === cat.id;
               return (
                 <button
                   key={cat.id}
                   onClick={() => handleCategoryChange(cat.id)}
-                  className={`px-5 py-2 rounded-full font-display text-xs md:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer flex-shrink-0 ${
+                  className={`w-full sm:w-auto px-3.5 sm:px-5 py-2.5 sm:py-2 rounded-full font-display text-xs md:text-sm font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer flex items-center justify-center text-center select-none active:scale-95 ${
                     isActive
-                      ? "bg-[#FFC700] text-[#111111] shadow-sm"
-                      : "bg-[#FFFFFF] text-[#111111]/70 hover:text-[#111111] hover:bg-[#FFFFFF]/80 border border-[#111111]/5"
+                      ? "bg-[#FFC700] text-[#111111] shadow-sm font-black"
+                      : "bg-[#FFFFFF] text-[#111111]/70 hover:text-[#111111] hover:bg-[#FFFFFF]/90 border border-[#111111]/5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
                   }`}
                 >
                   {cat.name}

@@ -29,10 +29,10 @@ export default function LocationSection() {
             <div className="relative w-full aspect-[16/10] bg-[#FAF8F5] rounded-3xl overflow-hidden shadow-xl border-2 border-[#111111]/10 p-2">
               <iframe
                 title="MEDEO Yandex Maps Location"
-                src="https://yandex.ru/map-widget/v1/?ll=76.914567%2C43.225678&z=16"
+                src="https://yandex.ru/map-widget/v1/org/medeo_coffee/223897580868/?ll=37.660916%2C55.754669&z=16"
                 width="100%"
                 height="100%"
-                className="rounded-2xl border-0 w-full h-full grayscale-[20%]"
+                className="rounded-2xl border-0 w-full h-full grayscale-[15%]"
                 loading="lazy"
               />
               
@@ -62,8 +62,8 @@ export default function LocationSection() {
                 <div>
                   <p className="font-display text-xs font-extrabold uppercase text-[#111111]/60 mb-0.5">АДРЕС</p>
                   <p className="font-sans text-base font-bold text-[#111111]">
-                    ул. Тимирязева, 42А, <br />
-                    Алматы, Казахстан
+                    ул. Верхняя Сыромятническая, 7, стр. 10, <br />
+                    Москва
                   </p>
                 </div>
               </div>
@@ -75,9 +75,12 @@ export default function LocationSection() {
                 </div>
                 <div>
                   <p className="font-display text-xs font-extrabold uppercase text-[#111111]/60 mb-0.5">ТЕЛЕФОН</p>
-                  <p className="font-sans text-base font-bold text-[#111111]">
-                    +7 707 123 45 67
-                  </p>
+                  <a
+                    href="tel:+79150216912"
+                    className="font-sans text-base font-bold text-[#111111] hover:underline"
+                  >
+                    +7 915 021 69 12
+                  </a>
                 </div>
               </div>
 
@@ -89,40 +92,38 @@ export default function LocationSection() {
                 <div>
                   <p className="font-display text-xs font-extrabold uppercase text-[#111111]/60 mb-0.5">ЧАСЫ РАБОТЫ</p>
                   <p className="font-sans text-sm font-bold text-[#111111]">
-                    пн–пт: 08:00 – 22:00 <br />
-                    сб–вс: 09:00 – 22:00
+                    Будни: 08:00 – 21:00 <br />
+                    Выходные: 10:00 – 20:00
                   </p>
                 </div>
               </div>
 
-              {/* SOCIAL CIRCLES */}
-              <div className="pt-2 flex items-center space-x-3">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="w-10 h-10 rounded-full bg-[#111111] text-[#FFC700] flex items-center justify-center font-display font-extrabold text-xs hover:bg-[#FAF8F5] hover:text-[#111111] transition-colors shadow-md"
-                >
-                  IG
-                </a>
-                <a
-                  href="https://t.me"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Telegram"
-                  className="w-10 h-10 rounded-full bg-[#111111] text-[#FFC700] flex items-center justify-center font-display font-extrabold text-xs hover:bg-[#FAF8F5] hover:text-[#111111] transition-colors shadow-md"
-                >
-                  TG
-                </a>
+              {/* SOCIAL */}
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-[#111111] text-[#FFC700] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md">
+                  <span className="font-display font-black text-sm leading-none">@</span>
+                </div>
+                <div>
+                  <p className="font-display text-xs font-extrabold uppercase text-[#111111]/60 mb-0.5">
+                    Давайте дружить в соц.сетях
+                  </p>
+                  <a
+                    href="https://instagram.com/medeo_coffee"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans text-base font-bold text-[#111111] hover:underline"
+                  >
+                    @medeo_coffee
+                  </a>
+                </div>
               </div>
 
             </div>
 
             {/* BLACK PILL BUTTON: МЫ НА КАРТЕ */}
-            <div className="pt-4">
+            <div className="pt-2">
               <a
-                href="https://yandex.ru/maps/-/CTXAuY8F"
+                href="https://yandex.com/maps/org/medeo_coffee/223897580868/?indoorLevel=1&ll=37.660916%2C55.754669&utm_source=share&z=16"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-4 bg-[#111111] text-[#FFC700] font-display text-xs font-black tracking-wider uppercase rounded-full flex items-center justify-center gap-2 hover:bg-[#FAF8F5] hover:text-[#111111] transition-all shadow-lg active:scale-95"
