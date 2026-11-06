@@ -22,8 +22,24 @@ export default function Hero() {
     }
   };
 
+  const awardHref = "https://restaurantguru.com/Medeo-coffee-Moscow";
+
+  const openAward = (event: React.MouseEvent<HTMLDivElement>) => {
+    if ((event.target as HTMLElement).closest("a")) return;
+    window.open(awardHref, "_blank", "noopener,noreferrer");
+  };
+
+  const handleAwardKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.target !== event.currentTarget) return;
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      window.open(awardHref, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <section className="relative w-full min-h-screen lg:h-screen lg:min-h-[640px] lg:max-h-[1080px] bg-[#FFC700] text-[#111111] overflow-hidden flex flex-col justify-center pt-20 sm:pt-24 pb-8 lg:py-0 select-none bg-grain">
+      <link rel="stylesheet" href="https://awards.infcdn.net/2026_new/r_rcm.css" />
       
       {/* AMBIENT STUDIO LIGHTING & CAST SHADOW SYSTEM ON THE YELLOW BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
@@ -64,6 +80,59 @@ export default function Hero() {
         className="hidden lg:block absolute bottom-0 right-0 w-[480px] xl:w-[520px] h-[480px] xl:h-[520px] rounded-tl-full bg-[#E5A100] pointer-events-none z-0 shadow-[-15px_-15px_45px_rgba(0,0,0,0.06)]"
         aria-hidden="true"
       />
+
+      {/* Restaurant Guru award: compact on phones and full size on desktop. */}
+      <div className="absolute top-[9%] right-[4%] z-20 origin-top-right scale-[0.58] min-[480px]:top-[12.5%] min-[480px]:right-[8.5%] min-[480px]:scale-[0.64] lg:top-[19%] lg:right-[4.5%] lg:scale-100">
+        <div
+          id="rg26-b-rcircle"
+          data-length="29"
+          className="rg26-b-rcircle_black rg26-rg-award-lang-en_US"
+          role="link"
+          tabIndex={0}
+          aria-label="Награда Restaurant Guru: Medeo coffee, Recommended 2026"
+          onClick={openAward}
+          onKeyDown={handleAwardKeyDown}
+        >
+          <a
+            href={awardHref}
+            className="rg26-b-rcircle_r-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Medeo coffee
+          </a>
+          <p className="rg26-b-rcircle_year">2026</p>
+          <div className="rg26-b-rcircle_bottom">
+            <p className="rg26-b-rcircle_str1">Recommended</p>
+          </div>
+          <div className="rg26-b-rcircle_heading">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              width="144px"
+              height="144px"
+              viewBox="0 0 144 144"
+              aria-hidden="true"
+            >
+              <defs>
+                <path id="rg26-b-rcircle-arc" d="M 12 72 a 60 60 0 0 0 120 0" />
+              </defs>
+              <text className="rg26-b-rcircle_heading__bottom" fill="#fff" textAnchor="middle">
+                <textPath startOffset="50%" xlinkHref="#rg26-b-rcircle-arc">
+                  <a
+                    href="https://restaurantguru.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rg26-b-rcircle_heading__link"
+                  >
+                    Restaurant Guru
+                  </a>
+                </textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 my-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 items-center relative z-10">
         
